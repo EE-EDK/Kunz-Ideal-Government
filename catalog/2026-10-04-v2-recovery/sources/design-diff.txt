@@ -1,0 +1,67 @@
+remote ids 109 v2 ids 114
+remote layer keys const:25 l1:3 l2:4 l3:4 l4:4 l5:5 l6:5 item keys [ 'id', 'label', 'status', 'desc', 'subitems' ]
+v2 keys [
+  'meta',
+  'axioms',
+  'constitutional',
+  'coreArchitecture',
+  'layers',
+  'resolutionLog',
+  'priorityQueue',
+  'sessionRules'
+] layers l1:3 l2:4 l3:4 l4:4 l5:5 l6:4 const undefined
+
+ONLY IN V2:
+  c26 resolved | Military posture
+  c27 resolved | Justice detail — cell jurisdiction
+  c28 resolved | Emergency tax
+  c29 resolved | Project-based funding entities
+  c30 resolved | Voluntary-service incentives
+  1a:Structure selected — Option D augmented (statement + RAG + AI + panel) resolved | Structure selected — Option D augmented (statement + RAG + AI + panel)
+  1a:Glossary — immutable constitutional core, annotation-only addenda resolved | Glossary — immutable constitutional core, annotation-only addenda
+  1a:1A-sub: Judiciary committee composition + selection + capture prevention — hybrid C+D (AI rubric by default; contest to sortition-drawn committee) resolved | 1A-sub: Judiciary committee composition + selection + capture prevention — hybrid C+D (AI rubric by default; contest to sortition-drawn committee)
+  1a:Qualification standards + selection for rotating panel arbiters (incl. body-level arbiter selection, moved from 5C) notstarted | Qualification standards + selection for rotating panel arbiters (incl. body-level arbiter selection, moved from 5C)
+  1a:Scope limits chartered (1A disputes vs. cell courts) notstarted | Scope limits chartered (1A disputes vs. cell courts)
+  1b:Fraud definition (takes without consent, no physical force — NAP violation?) notstarted | Fraud definition (takes without consent, no physical force — NAP violation?)
+  1b:Cross-cell environmental damage (force against whom?) notstarted | Cross-cell environmental damage (force against whom?)
+  1b:Psychological coercion (qualifies as initiation?) notstarted | Psychological coercion (qualifies as initiation?)
+  1b:Negligence causing harm (unintentional — still NAP violation?) notstarted | Negligence causing harm (unintentional — still NAP violation?)
+  1c:Economic sanctions mechanism (carried from 6B) notstarted | Economic sanctions mechanism (carried from 6B)
+  1c:Military authorization threshold (carried from 6B) notstarted | Military authorization threshold (carried from 6B)
+  1c:Isolation / representation loss (carried from 6B) notstarted | Isolation / representation loss (carried from 6B)
+  2d:Glossary amendment threshold (deferred from 1A — must exceed 3/4 + 75%) notstarted | Glossary amendment threshold (deferred from 1A — must exceed 3/4 + 75%)
+
+ONLY IN REMOTE:
+  1a:Structure selected (A/B/C/D) inprogress | Structure selected (A/B/C/D)
+  1a:Qualification standards defined notstarted | Qualification standards defined
+  1a:Scope limits chartered notstarted | Scope limits chartered
+  1a:Plain-language glossary confirmed notstarted | Plain-language glossary confirmed
+  1b:Fraud definition notstarted | Fraud definition
+  1b:Cross-cell environmental damage notstarted | Cross-cell environmental damage
+  1b:Psychological coercion notstarted | Psychological coercion
+  1b:Negligence causing harm notstarted | Negligence causing harm
+  5c:Body-level arbiter selection notstarted | Body-level arbiter selection
+  6b notstarted | 6B — Rogue Cell Enforcement
+  6b:Economic sanctions mechanism notstarted | Economic sanctions mechanism
+  6b:Military authorization threshold notstarted | Military authorization threshold
+  6b:Isolation / representation loss notstarted | Isolation / representation loss
+
+DIFFER:
+  c7 desc
+  c11 desc
+  c12 desc
+  c13 desc
+  c14 desc
+  c21 desc
+  c24 desc
+  1a desc
+  1b desc
+  1c desc; label "1C — Enforcement Hierarchy"->"1C — Enforcement Hierarchy (absorbs 6B)"
+  2a label "2A — Min Central Functions"->"2A — Minimum Central Functions"
+  2b label "2B — Cell Internal Gov Floor"->"2B — Cell Internal Governance Floor"
+  2c label "2C — Cell Size / Subdivision"->"2C — Cell Size / Subdivision Trigger"
+  2d desc
+  5c desc
+
+resolutionLog entries 6 priorityQueue 12
+meta {"version":"2.1","stateDate":"2026-10-04","sources":["GOVERNMENT_PROJECT_BRIEF.md v1.0 (2026-06-02) [VERIFIED]","Session 2026-06-28 — 1A structure + glossary resolutions [VERIFIED via transcript]","Owner decisions logged 2026-09-13 — 1A-sub, c26–c30, 1C/6B merge, 5C→1A move, AI-role principle [RECALLED — project memory log, owner-stated; verify against session transcripts]"],"position":"Layer 1A open — 1A-sub resolved (2026-09-13). Active gaps: arbiter qualification standards (now including body-level arbiter selection) and scope limits.","inbox":{"endpoint":""}}

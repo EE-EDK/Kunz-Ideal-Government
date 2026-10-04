@@ -1,0 +1,948 @@
+{
+  "meta": {
+    "version": "2.1",
+    "stateDate": "2026-10-04",
+    "sources": [
+      "GOVERNMENT_PROJECT_BRIEF.md v1.0 (2026-06-02) [VERIFIED]",
+      "Session 2026-06-28 — 1A structure + glossary resolutions [VERIFIED via transcript]",
+      "Owner decisions logged 2026-09-13 — 1A-sub, c26–c30, 1C/6B merge, 5C→1A move, AI-role principle [RECALLED — project memory log, owner-stated; verify against session transcripts]"
+    ],
+    "position": "Layer 1A open — 1A-sub resolved (2026-09-13). Active gaps: arbiter qualification standards (now including body-level arbiter selection) and scope limits.",
+    "inbox": {
+      "endpoint": ""
+    }
+  },
+  "axioms": [
+    {
+      "name": "Natural rights",
+      "text": "Objective natural law exists. Rights are recognized, not granted. Defensible through deism, Christianity, or secular reason equally. Source-agnostic."
+    },
+    {
+      "name": "Soft determinism",
+      "text": "Agency is real. Physics constrains but does not fully determine. Consciousness/soul have undetermined properties. Hard determinism rejected."
+    },
+    {
+      "name": "Hierarchy",
+      "text": "Dominance hierarchy is a biological species-level fact, not a cultural artifact. Flat structures are unstable. Design must work with hierarchy, not against it."
+    },
+    {
+      "name": "NAP baseline",
+      "text": "Non-Aggression Principle is the default behavioral norm. Voluntarism first. Coercion only where structurally necessary."
+    },
+    {
+      "name": "Subsidiarity",
+      "text": "Power dispersed is power constrained. Decisions at the lowest competent level. Switzerland/canton model is the closest real-world approximation."
+    },
+    {
+      "name": "Anti-metropolitanism",
+      "text": "Urban density pathologizes human behavior at scale. Rural interdependence produces better social outcomes. Design should structurally limit density concentration."
+    },
+    {
+      "name": "Children as protected class",
+      "text": "Children hold rights in trust. NAP applies asymmetrically until capacity is established. Extra protection layer is constitutional, not discretionary."
+    },
+    {
+      "name": "AI as legitimacy tool",
+      "text": "AI parses law for contradiction, maintains parity numbers, enables data-driven egalitarianism. It is infrastructure, not governance."
+    }
+  ],
+  "constitutional": {
+    "id": "const",
+    "label": "Constitutional Layer",
+    "isHub": true,
+    "pos": [
+      0,
+      0,
+      0
+    ],
+    "description": "The immutable core document. Additive-only. 3/4 coordination body + 75% popular supermajority to amend. Never subtractive. Recognizes natural rights. All unlisted powers default to cells. No international authority recognized.",
+    "items": [
+      {
+        "id": "c1",
+        "label": "Additive-only amendment",
+        "status": "resolved",
+        "desc": "3/4 coordination body + 75% popular supermajority to add. Never subtractive."
+      },
+      {
+        "id": "c2",
+        "label": "Natural rights recognized",
+        "status": "resolved",
+        "desc": "Rights recognized, not granted. Source-agnostic: deism, Christianity, secular reason."
+      },
+      {
+        "id": "c3",
+        "label": "NAP as default norm",
+        "status": "resolved",
+        "desc": "Non-Aggression Principle is the baseline behavioral standard. Voluntarism first."
+      },
+      {
+        "id": "c4",
+        "label": "10th/9th analog",
+        "status": "resolved",
+        "desc": "All unlisted powers default explicitly to cells. No implied federal authority."
+      },
+      {
+        "id": "c5",
+        "label": "No international authority",
+        "status": "resolved",
+        "desc": "System sovereignty is absolute. International cooperation is transactional, not binding."
+      },
+      {
+        "id": "c6",
+        "label": "Speech — radical, NAP-bounded",
+        "status": "resolved",
+        "desc": "Maximum freedom of speech. NAP is the only limit. Cells handle nuance."
+      },
+      {
+        "id": "c7",
+        "label": "Religion — NAP-tested",
+        "status": "resolved",
+        "desc": "Subsumed under speech. Voluntary practice protected. Governance application that mandates non-voluntary compliance = constitutional void."
+      },
+      {
+        "id": "c8",
+        "label": "Arms — tiered",
+        "status": "resolved",
+        "desc": "Household issue baseline. Personal through Class III constitutional. Cell militia for heavy. WMD equally distributed."
+      },
+      {
+        "id": "c9",
+        "label": "Travel — citizen floor",
+        "status": "resolved",
+        "desc": "Search/seizure protections apply everywhere. Cell-licensed nuance (driving, etc.)."
+      },
+      {
+        "id": "c10",
+        "label": "V+1 criminal standard",
+        "status": "resolved",
+        "desc": "Retributive proportionality plus one degree for violent crime. Massive deterrent architecture."
+      },
+      {
+        "id": "c11",
+        "label": "Execution — tiered delegation",
+        "status": "resolved",
+        "desc": "Victim (first right) → volunteer pool (random selection) → automated chamber. Randomized actuation, 3 fast methods, fire cleanup. No permanent executor class."
+      },
+      {
+        "id": "c12",
+        "label": "National security body",
+        "status": "resolved",
+        "desc": "Transparently chartered. Subsumes FBI/CIA/NSA functions. No domestic surveillance authority. Violations: V+1 applied, publicly streamed."
+      },
+      {
+        "id": "c13",
+        "label": "Oversight body",
+        "status": "resolved",
+        "desc": "Elected separately. Dual function: internal accountability + diplomatic interface. Hard-scoped by design."
+      },
+      {
+        "id": "c14",
+        "label": "Immigration — tiered",
+        "status": "resolved",
+        "desc": "Foreign nationals: zero constitutional standing. Tiered entry (tourist/education/business = cell-permitted, short-term). Body floor + cell acceptance. Sharp penalties. No international body authority over borders."
+      },
+      {
+        "id": "c15",
+        "label": "Resource contribution system",
+        "status": "resolved",
+        "desc": "Value-percentage based. 10-year review cycle. No default income tax."
+      },
+      {
+        "id": "c16",
+        "label": "Parity number system",
+        "status": "resolved",
+        "desc": "Technocratic, sector-owned, publicly transparent. All businesses require parity number at founding."
+      },
+      {
+        "id": "c17",
+        "label": "Progressive wealth equation",
+        "status": "resolved",
+        "desc": "Significant wealth permitted. Takeover-scale accumulation structurally prevented via ceiling."
+      },
+      {
+        "id": "c18",
+        "label": "Birth accounts",
+        "status": "resolved",
+        "desc": "Body floor + cell additive. Funded from cell value percentages. No citizen starts at zero."
+      },
+      {
+        "id": "c19",
+        "label": "No mandatory welfare",
+        "status": "resolved",
+        "desc": "Voluntary support system + birth accounts replaces mandatory welfare."
+      },
+      {
+        "id": "c20",
+        "label": "Early adulthood petition",
+        "status": "resolved",
+        "desc": "12+ with 75% judicial panel + mandatory parental inclusion. Rare genius cases can access agency early."
+      },
+      {
+        "id": "c21",
+        "label": "Cell absorption rules",
+        "status": "resolved",
+        "desc": "Competitive incentive market. 90% dual supermajority (both cells). Accumulation ceiling enforced."
+      },
+      {
+        "id": "c22",
+        "label": "Cell disbandment — prohibited",
+        "status": "resolved",
+        "desc": "Cells cannot be dissolved. Only absorbed with dual supermajority."
+      },
+      {
+        "id": "c23",
+        "label": "New cell formation process",
+        "status": "resolved",
+        "desc": "Body-wide formal process. Resource allocation review triggered on instantiation."
+      },
+      {
+        "id": "c24",
+        "label": "WMD equal distribution",
+        "status": "resolved",
+        "desc": "Capability-defined (10,000+ casualties OR 1+ sq mile radius), technology-agnostic. Equal custody across cells. Cross-cell manning. No single-cell monopoly."
+      },
+      {
+        "id": "c25",
+        "label": "Inter-cell movement",
+        "status": "resolved",
+        "desc": "Citizen-preferenced process. Merit/achievement transfer pathway. Body citizenship portable."
+      },
+      {
+        "id": "c26",
+        "label": "Military posture",
+        "status": "resolved",
+        "desc": "No standing army, no universal service. Cell militias for local events. Large-scale conflict is pre-committed by cell-to-body agreements with preordained cell specializations. Volunteers first; conscription only at grave trigger points (merit/numbers-based, with perks, fixed rotations, escalating multi-cell override to extend). Body may run an outward-facing intelligence and development service funded by cell contracts. (2026-09-13)"
+      },
+      {
+        "id": "c27",
+        "label": "Justice detail — cell jurisdiction",
+        "status": "resolved",
+        "desc": "Bail, jury, and punishment detail are cell jurisdiction. Diverse cell justice systems are necessary, like biological cells. AI may assist jury/peer processes."
+      },
+      {
+        "id": "c28",
+        "label": "Emergency tax",
+        "status": "resolved",
+        "desc": "Flat, voted, hard-capped, hard-stopped. Sunset clauses are constitutional. (confirmed 2026-09-13)"
+      },
+      {
+        "id": "c29",
+        "label": "Project-based funding entities",
+        "status": "resolved",
+        "desc": "Scoped, funded to estimate, disbanded or absorbed at completion. (confirmed 2026-09-13)"
+      },
+      {
+        "id": "c30",
+        "label": "Voluntary-service incentives",
+        "status": "resolved",
+        "desc": "Tax reduction, promotion weighting. (confirmed 2026-09-13)"
+      }
+    ]
+  },
+  "coreArchitecture": [
+    {
+      "name": "Cell Model",
+      "points": [
+        "Cells = the canton analog. Named (e.g., \"Iron-Cell,\" \"FreeFarming-Cell\").",
+        "Resource-balanced geography at founding — no cell holds monopoly on high-value natural resources.",
+        "Cells have their own constitutions, below the body constitution.",
+        "Cell-citizens hold dual identity: body-citizen status (portable) + cell-citizen status (cell-specific).",
+        "Cells compete for citizens — birth accounts, resources, quality of governance are differentiators."
+      ]
+    },
+    {
+      "name": "WMD / National Security",
+      "points": [
+        "WMD defined by capability metric (10k+ casualties or 1+ sq mile damage), technology-agnostic.",
+        "Equal distribution across cells — mutual assured balance, no cell achieves dominance.",
+        "Cross-cell equal contribution to manning — rotation/contract fills resource gaps, headcount stays proportional.",
+        "National security body: no domestic surveillance, transparently chartered.",
+        "Oversight body: separately elected, dual internal/external function, limited scope by design.",
+        "Violations of national security role: V+1 applied, publicly streamed — no permanent institutional capture possible."
+      ]
+    },
+    {
+      "name": "Wealth / Economic Floor",
+      "points": [
+        "Primary check: resource-balanced cell geography at founding.",
+        "Secondary check: body-level progressive contribution equation (scales with value, universal across cells).",
+        "Tertiary check: cell-level anti-monopoly rules for non-resource industries.",
+        "Parity number: all businesses/industries/services assigned dynamic transparent value metric by technocratic sector owners.",
+        "No mandatory welfare. Voluntary system + birth account = floor.",
+        "Struggling cell pathway: competitive absorption offers, 90% dual supermajority still applies, accumulation ceiling prevents dominant-cell rollup."
+      ]
+    },
+    {
+      "name": "Citizenship",
+      "points": [
+        "Body-level floor: universal minimum requirements, non-negotiable everywhere.",
+        "Cell-level acceptance: after body floor cleared, applicant selects and must be accepted by a specific cell.",
+        "Cell defines its own additional requirements above the body floor.",
+        "Entry vector problem solved: lenient cell can only grant cell-citizenship; body-citizenship requires clearing hard floor."
+      ]
+    },
+    {
+      "name": "Coordination Body (framework — detail pending 2D)",
+      "points": [
+        "Hybrid: rotating cell delegates + equal technocratic sector representation.",
+        "Population-adaptive scaling.",
+        "New cells or absorptions trigger rebalancing of representation numbers."
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "id": "l1",
+      "label": "Layer 1 — Foundation",
+      "short": "Foundation",
+      "pos": [
+        -18,
+        6,
+        0
+      ],
+      "description": "Rights arbitration, NAP enforcement, hierarchy constraints. The enforcement substrate beneath the constitutional text.",
+      "items": [
+        {
+          "id": "1a",
+          "label": "1A — Rights Arbitration Body",
+          "status": "inprogress",
+          "desc": "Structure and glossary RESOLVED 2026-06-28. Option D augmented: both parties submit structured argument statements with judiciary-committee-scoped RAG factual records → AI parses statements + constitutional text → ruling recommendation → either party may reject → rotating panel, final, constitutional text only, no precedent accumulation. Glossary: immutable constitutional core. 1A-sub RESOLVED 2026-09-13 (hybrid of Options C and D — see Resolution Log). OPEN: arbiter qualification standards (now including body-level arbiter selection, moved from 5C), scope limits.",
+          "subitems": [
+            {
+              "label": "Structure selected — Option D augmented (statement + RAG + AI + panel)",
+              "status": "resolved"
+            },
+            {
+              "label": "Glossary — immutable constitutional core, annotation-only addenda",
+              "status": "resolved"
+            },
+            {
+              "label": "1A-sub: Judiciary committee composition + selection + capture prevention — hybrid C+D (AI rubric by default; contest to sortition-drawn committee)",
+              "status": "resolved"
+            },
+            {
+              "label": "Qualification standards + selection for rotating panel arbiters (incl. body-level arbiter selection, moved from 5C)",
+              "status": "notstarted"
+            },
+            {
+              "label": "Scope limits chartered (1A disputes vs. cell courts)",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "1b",
+          "label": "1B — NAP Edge Cases",
+          "status": "notstarted",
+          "desc": "Fraud, cross-cell environmental damage, psychological coercion, negligence. Each needs a constitutional answer or a defined arbitration pathway.",
+          "subitems": [
+            {
+              "label": "Fraud definition (takes without consent, no physical force — NAP violation?)",
+              "status": "notstarted"
+            },
+            {
+              "label": "Cross-cell environmental damage (force against whom?)",
+              "status": "notstarted"
+            },
+            {
+              "label": "Psychological coercion (qualifies as initiation?)",
+              "status": "notstarted"
+            },
+            {
+              "label": "Negligence causing harm (unintentional — still NAP violation?)",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "1c",
+          "label": "1C — Enforcement Hierarchy (absorbs 6B)",
+          "status": "notstarted",
+          "desc": "Who enforces body-level constitutional violations if a cell refuses? Coordination body has no enforcement arm specified. Absorbed 6B (rogue cell enforcement) on 2026-09-13; its three sub-items are carried here.",
+          "subitems": [
+            {
+              "label": "Mechanism against rogue cells",
+              "status": "notstarted"
+            },
+            {
+              "label": "Enforcement arm definition",
+              "status": "notstarted"
+            },
+            {
+              "label": "Economic sanctions mechanism (carried from 6B)",
+              "status": "notstarted"
+            },
+            {
+              "label": "Military authorization threshold (carried from 6B)",
+              "status": "notstarted"
+            },
+            {
+              "label": "Isolation / representation loss (carried from 6B)",
+              "status": "notstarted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "label": "Layer 2 — Structure",
+      "short": "Structure",
+      "pos": [
+        -8,
+        12,
+        -16
+      ],
+      "description": "Cell model specifics, coordination body detail, minimum central functions. The skeletal architecture of the system.",
+      "items": [
+        {
+          "id": "2a",
+          "label": "2A — Minimum Central Functions",
+          "status": "notstarted",
+          "desc": "Enumerate what must exist at body level vs optional. Currency, standards body, courts, treaty functions.",
+          "subitems": []
+        },
+        {
+          "id": "2b",
+          "label": "2B — Cell Internal Governance Floor",
+          "status": "notstarted",
+          "desc": "Constitutional minimum for cell governance? Must be capable of producing a delegate. Can a cell be internally monarchic?",
+          "subitems": []
+        },
+        {
+          "id": "2c",
+          "label": "2C — Cell Size / Subdivision Trigger",
+          "status": "notstarted",
+          "desc": "Population growth is uneven. When does a cell become too large? Subdivision trigger needed.",
+          "subitems": []
+        },
+        {
+          "id": "2d",
+          "label": "2D — Coordination Body Detail",
+          "status": "notstarted",
+          "desc": "Delegate count, technocratic sectors, quorum, voting thresholds, term lengths, emergency sessions. Also owns: exact glossary amendment threshold (deferred from 1A).",
+          "subitems": [
+            {
+              "label": "Delegate count (equal or pop-weighted)",
+              "status": "notstarted"
+            },
+            {
+              "label": "Technocratic sector count/definition",
+              "status": "notstarted"
+            },
+            {
+              "label": "Quorum requirements",
+              "status": "notstarted"
+            },
+            {
+              "label": "Voting thresholds by decision type",
+              "status": "notstarted"
+            },
+            {
+              "label": "Term lengths",
+              "status": "notstarted"
+            },
+            {
+              "label": "Emergency session trigger",
+              "status": "notstarted"
+            },
+            {
+              "label": "Glossary amendment threshold (deferred from 1A — must exceed 3/4 + 75%)",
+              "status": "notstarted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "label": "Layer 3 — Economic",
+      "short": "Economic",
+      "pos": [
+        8,
+        12,
+        -16
+      ],
+      "description": "Capital, property, currency, technocratic federations. The economic substrate and its rules.",
+      "items": [
+        {
+          "id": "3a",
+          "label": "3A — Currency Model",
+          "status": "notstarted",
+          "desc": "Single body currency, cell currencies, or open competition? Monetary authority? Commodity/fiat/crypto-style?",
+          "subitems": []
+        },
+        {
+          "id": "3b",
+          "label": "3B — Property Rights",
+          "status": "notstarted",
+          "desc": "Land ownership theory, intellectual property, commons/cross-cell resources, abandoned property reversion.",
+          "subitems": [
+            {
+              "label": "Land ownership theory",
+              "status": "notstarted"
+            },
+            {
+              "label": "Intellectual property duration",
+              "status": "notstarted"
+            },
+            {
+              "label": "Commons / cross-cell resources",
+              "status": "notstarted"
+            },
+            {
+              "label": "Abandoned property reversion",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "3c",
+          "label": "3C — Cross-Cell Contracts",
+          "status": "notstarted",
+          "desc": "Which cell's law governs cross-cell contracts? Who enforces? No interstate equivalent defined.",
+          "subitems": []
+        },
+        {
+          "id": "3d",
+          "label": "3D — Technocratic Federations",
+          "status": "notstarted",
+          "desc": "What sectors exist at body level? Permanent or dynamic? Regulatory vs advisory authority? Cell economy interaction.",
+          "subitems": [
+            {
+              "label": "Sector list defined",
+              "status": "notstarted"
+            },
+            {
+              "label": "Permanent vs dynamic sectors",
+              "status": "notstarted"
+            },
+            {
+              "label": "Regulatory vs advisory authority",
+              "status": "notstarted"
+            },
+            {
+              "label": "Cell economy interaction model",
+              "status": "notstarted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "label": "Layer 4 — Social",
+      "short": "Social",
+      "pos": [
+        18,
+        6,
+        0
+      ],
+      "description": "Children, urban policy, family, cultural substrate. The human layer of the system.",
+      "items": [
+        {
+          "id": "4a",
+          "label": "4A — Child Protection",
+          "status": "notstarted",
+          "desc": "V+1 multiplier for crimes against children? Standing when parents are perpetrators? Body vs cell jurisdiction?",
+          "subitems": [
+            {
+              "label": "V+1 severity multiplier for children",
+              "status": "notstarted"
+            },
+            {
+              "label": "Standing when parents are perpetrators",
+              "status": "notstarted"
+            },
+            {
+              "label": "Body vs cell jurisdiction",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "4b",
+          "label": "4B — Education",
+          "status": "notstarted",
+          "desc": "Body floor vs cell-defined? Private/market role? Civics/constitution curriculum required?",
+          "subitems": [
+            {
+              "label": "Body floor vs cell-defined",
+              "status": "notstarted"
+            },
+            {
+              "label": "Private/market role",
+              "status": "notstarted"
+            },
+            {
+              "label": "Civics/constitution curriculum",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "4c",
+          "label": "4C — Urban Density",
+          "status": "notstarted",
+          "desc": "Constitutional density ceiling per cell? Rural incentive structures? Parity weighting for rural production?",
+          "subitems": [
+            {
+              "label": "Density ceiling per cell",
+              "status": "notstarted"
+            },
+            {
+              "label": "Rural incentive structures",
+              "status": "notstarted"
+            },
+            {
+              "label": "Parity weighting for rural production",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "label": "4D — Family Definition",
+          "status": "notstarted",
+          "desc": "Constitutional vs cell-defined? Legal rights of family unit vs individual? Divorce, inheritance, custody jurisdiction?",
+          "subitems": [
+            {
+              "label": "Constitutional vs cell-defined",
+              "status": "notstarted"
+            },
+            {
+              "label": "Family unit vs individual rights",
+              "status": "notstarted"
+            },
+            {
+              "label": "Divorce/inheritance/custody jurisdiction",
+              "status": "notstarted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l5",
+      "label": "Layer 5 — Legitimacy",
+      "short": "Legitimacy",
+      "pos": [
+        8,
+        12,
+        16
+      ],
+      "description": "AI role, law writing, judicial selection, transparency, accountability. How the system maintains integrity over time.",
+      "items": [
+        {
+          "id": "5a",
+          "label": "5A — AI Governance",
+          "status": "notstarted",
+          "desc": "Who owns/operates AI systems? Capture prevention? Audit mechanism? Conflict with elected body?",
+          "subitems": [
+            {
+              "label": "Ownership and operation model",
+              "status": "notstarted"
+            },
+            {
+              "label": "Capture prevention mechanism",
+              "status": "notstarted"
+            },
+            {
+              "label": "Audit mechanism",
+              "status": "notstarted"
+            },
+            {
+              "label": "AI vs elected body conflict resolution",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "5b",
+          "label": "5B — Law Writing Process",
+          "status": "notstarted",
+          "desc": "Cell law revision cycle? Body law revision process? Direct democracy, delegate-written, AI-drafted?",
+          "subitems": [
+            {
+              "label": "Cell law revision cycle",
+              "status": "notstarted"
+            },
+            {
+              "label": "Body law revision process",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "5c",
+          "label": "5C — Judicial Selection",
+          "status": "notstarted",
+          "desc": "Cell-level judges — elected, appointed, merit? Body-level arbiter selection moved to 1A (arbiter qualification standards) on 2026-09-13.",
+          "subitems": [
+            {
+              "label": "Cell-level judge selection",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "5d",
+          "label": "5D — Transparency Infrastructure",
+          "status": "notstarted",
+          "desc": "Constitutional right to government data? Or cell-defined?",
+          "subitems": []
+        },
+        {
+          "id": "5e",
+          "label": "5E — Corruption Standard",
+          "status": "notstarted",
+          "desc": "Cell-level corruption handling. Body floor minimum for bribery, judicial capture, election fraud.",
+          "subitems": [
+            {
+              "label": "Cell-level corruption handling",
+              "status": "notstarted"
+            },
+            {
+              "label": "Body floor minimum standard",
+              "status": "notstarted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l6",
+      "label": "Layer 6 — Defense",
+      "short": "Defense",
+      "pos": [
+        -8,
+        12,
+        16
+      ],
+      "description": "External threats, internal enforcement, police function, intelligence constraints. The security architecture.",
+      "items": [
+        {
+          "id": "6a",
+          "label": "6A — Cross-Cell Command",
+          "status": "notstarted",
+          "desc": "Who commands when external threat triggers body-level response? Sunset/return to cells post-threat?",
+          "subitems": [
+            {
+              "label": "Command structure during external threat",
+              "status": "notstarted"
+            },
+            {
+              "label": "Sunset / return to cells post-threat",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "6c",
+          "label": "6C — Police Function",
+          "status": "notstarted",
+          "desc": "Cell-controlled entirely? Constitutional floor for conduct? Who polices the police?",
+          "subitems": [
+            {
+              "label": "Cell control floor",
+              "status": "notstarted"
+            },
+            {
+              "label": "Oversight mechanism",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "6d",
+          "label": "6D — Intelligence Constraints",
+          "status": "notstarted",
+          "desc": "Cell surveillance authority? Voluntary intel sharing? Evidentiary standard? Foreign intel authorization?",
+          "subitems": [
+            {
+              "label": "Cell-level surveillance authority",
+              "status": "notstarted"
+            },
+            {
+              "label": "Voluntary intel sharing rules",
+              "status": "notstarted"
+            },
+            {
+              "label": "Evidentiary standard for citizen investigation",
+              "status": "notstarted"
+            },
+            {
+              "label": "Foreign intelligence authorization",
+              "status": "notstarted"
+            }
+          ]
+        },
+        {
+          "id": "6e",
+          "label": "6E — Threat Definition",
+          "status": "notstarted",
+          "desc": "What threshold triggers body-level military response? Authorization requirement to prevent abuse?",
+          "subitems": [
+            {
+              "label": "Threshold for body-level trigger",
+              "status": "notstarted"
+            },
+            {
+              "label": "Authorization requirement",
+              "status": "notstarted"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resolutionLog": [
+    {
+      "id": "1A — Structure",
+      "date": "2026-06-28",
+      "body": "Option D confirmed, then AUGMENTED by owner:\n  - Both parties independently submit a structured statement of argument —\n    a formal document pairing their legal/rights claim with a RAG-assembled\n    factual record, filtered and scoped by a judiciary committee.\n  - AI parses statements + constitutional text → ruling recommendation.\n  - Either party may reject → escalates to rotating panel of human arbiters.\n  - Panel ruling is final. Constitutional text only. No spirit-of-the-law.\n    No precedent accumulation.\n  Statement functions: (1) directs AI parsing from committee-vetted inputs,\n  (2) routes factual disputes to trial instead of arbitration,\n  (3) produces a higher-quality panel record on escalation.\n  SECOND-ORDER: judiciary committee now exists as a required component\n  → logged as 1A-sub (composition, selection, capture prevention)."
+    },
+    {
+      "id": "1A — Glossary",
+      "date": "2026-06-28",
+      "body": "Immutable constitutional core.\n  - Philosophically derived at founding, cemented permanently.\n  - Amendment threshold: astronomical — structurally ABOVE the standard\n    additive process (3/4 + 75%). Exact threshold set at 2D.\n  - Clarifications and factual addenda permitted as companion annotations\n    ONLY — cannot alter the defined meaning of any core term.\n  - No governing body may redefine a glossary term via any lighter process."
+    },
+    {
+      "id": "1A-sub — Judiciary committee",
+      "date": "2026-09-13",
+      "body": "Hybrid of Options C and D (amended 2026-09-13):\n  - AI applies a published evidentiary rubric by default.\n  - Either party may contest and escalate, with counsel, to a\n    sortition-drawn committee bound by the same rubric.\n  - The rotating arbiter panel audits only when a decision is contested,\n    never by random sample.\n  SOURCE NOTE [RECALLED]: recorded from the project memory log. The log names\n  both a \"sortition-drawn committee\" and a \"rotating arbiter panel\" and does\n  not say whether they are the same body. Verify against the 2026-09-13\n  session transcript."
+    },
+    {
+      "id": "1C — Absorbs 6B",
+      "date": "2026-09-13",
+      "body": "Rogue cell enforcement (6B) merged into 1C.\n  Owner principle: merge what can be merged; simplicity and non-redundancy\n  are primary goals of the whole system.\n  6B original text (preserved, not deleted):\n    \"If a cell violates the body constitution and refuses compliance, what\n    is the enforcement mechanism?\"\n    Sub-items: economic sanctions mechanism · military authorization\n    threshold · isolation / representation loss.\n  The three sub-items now sit under 1C. 6B no longer appears as a node."
+    },
+    {
+      "id": "5C → 1A — Arbiter selection",
+      "date": "2026-09-13",
+      "body": "Body-level arbiter selection moved out of 5C into 1A (arbiter qualification\n  standards + selection). 5C keeps cell-level judge selection.\n  Original 5C sub-item (preserved): \"Body-level arbiter selection\"."
+    },
+    {
+      "id": "AI role — principle",
+      "date": "2026-09-13",
+      "body": "  - Always contestable; audited only when contested.\n  - AI is infrastructure. It is governance only where it fills bureaucratic\n    holes and proves long-run utility.\n  - Can be phased out if it proves too contestable.\n  Recorded as a principle. 5A sub-items (ownership, capture prevention,\n  audit, AI vs elected body) stay not-started until the owner says whether\n  this principle closes any of them."
+    }
+  ],
+  "priorityQueue": [
+    {
+      "n": 1,
+      "item": "1A — Rights Arbitration Body structure",
+      "layer": "Foundation",
+      "blocker": "Yes — needed before 1B/1C can close",
+      "done": true
+    },
+    {
+      "n": 2,
+      "item": "1A — Glossary requirement confirmation",
+      "layer": "Foundation",
+      "blocker": "Yes — needed before 1A closes",
+      "done": true
+    },
+    {
+      "n": 3,
+      "item": "1A-sub — Judiciary committee (composition, selection, capture prevention)",
+      "layer": "Foundation",
+      "blocker": "Yes — gates 1A close (or bundle into 5C)",
+      "done": true
+    },
+    {
+      "n": 4,
+      "item": "1A — Arbiter qualification standards (incl. body-level arbiter selection, from 5C) + scope limits",
+      "layer": "Foundation",
+      "blocker": "Yes — gates 1A close",
+      "done": false
+    },
+    {
+      "n": 5,
+      "item": "1B — NAP edge cases (fraud, environment, coercion, negligence)",
+      "layer": "Foundation",
+      "blocker": "No",
+      "done": false
+    },
+    {
+      "n": 6,
+      "item": "1C — Enforcement hierarchy against rogue cells (absorbs 6B)",
+      "layer": "Foundation",
+      "blocker": "No",
+      "done": false
+    },
+    {
+      "n": 7,
+      "item": "2D — Coordination body full detail (incl. glossary amendment threshold)",
+      "layer": "Structure",
+      "blocker": "Partial — needed for Layer 5 legitimacy items",
+      "done": false
+    },
+    {
+      "n": 8,
+      "item": "3A — Currency model",
+      "layer": "Economic",
+      "blocker": "No",
+      "done": false
+    },
+    {
+      "n": 9,
+      "item": "3B — Property rights",
+      "layer": "Economic",
+      "blocker": "No",
+      "done": false
+    },
+    {
+      "n": 10,
+      "item": "5A — AI governance",
+      "layer": "Legitimacy",
+      "blocker": "No",
+      "done": false
+    },
+    {
+      "n": 11,
+      "item": "6A — Cross-cell military command",
+      "layer": "Defense",
+      "blocker": "No",
+      "done": false
+    },
+    {
+      "n": 12,
+      "item": "6E — Threat definition",
+      "layer": "Defense",
+      "blocker": "Partial — needed before 6A fully closes",
+      "done": false
+    }
+  ],
+  "sessionRules": {
+    "conversation": [
+      "<b>One gap at a time.</b> Present the gap, give analytical options with tradeoffs, let the owner decide. Do not bundle multiple gaps into one question.",
+      "<b>Axioms are fixed.</b> Do not re-open the axiom set. Build on it.",
+      "<b>Resolved items are permanent.</b> Nothing resolved is re-opened without the owner explicitly flagging it. Additive only.",
+      "<b>After each resolution:</b> log it cleanly, flag any residuals it surfaces, update the master checklist, then proceed to the next item.",
+      "<b>After each layer completes:</b> update the visualization — resolved nodes to RESOLVED, update descriptions, present the new file.",
+      "<b>No unsolicited suggestions.</b> If a stated position has a tension, surface it once, cleanly. If resolved, accept and move on. Do not re-surface resolved tensions.",
+      "<b>Maintain forensic precision.</b> Distinguish resolved (✅), in-progress (🔄), flagged residual (⚠️), not-started (⬜). Never mark something resolved unless the owner has explicitly closed it."
+    ],
+    "analytical": [
+      "Lead with the problem stated precisely, then options with tradeoffs.",
+      "Recommend only when there is a clear structural reason — label it as a recommendation, not a mandate.",
+      "Surface second-order effects of decisions (what does this unlock or complicate downstream?).",
+      "When a decision creates a new open item, add it to the checklist immediately — do not let residuals disappear."
+    ],
+    "format": [
+      "Master checklist shown after every resolution using the established tree format.",
+      "Resolutions logged in a clean block: [Item ID] — Resolved, followed by the mechanism.",
+      "Tensions flagged inline, not in a separate section, unless they affect multiple layers.",
+      "No filler, no summaries of what was just said, no \"great choice\" — log and proceed."
+    ],
+    "htmlUpdate": [
+      "Locate the item in the DATA object by id (this file — DATA is the single source of truth for all tabs and the 3D web).",
+      "Change status to 'resolved' (or appropriate). Update the desc field with the resolution summary (1–2 sentences).",
+      "If subitems exist, update each subitem status individually.",
+      "Use targeted str_replace edits — do not rewrite the whole file.",
+      "Present the updated file. Note in the checklist: ✅ HTML updated — [item ID]."
+    ],
+    "resume": "GOVERNMENT DESIGN PROJECT — RESUME\n\nThis is a continuation of a structured government design project. Full state is in government_master_v2.html — the DATA object is the source of truth. Read it before responding.\n\nCurrent position: Layer 1A. Structure (Option D augmented) and glossary (immutable core) are RESOLVED (2026-06-28). 1A-sub judiciary committee is RESOLVED (2026-09-13, hybrid of Options C and D). Constitutional items c26–c30 were added 2026-09-13, so every constitutional item is resolved. 1C absorbed 6B; body-level arbiter selection moved from 5C to 1A. Open gates: arbiter qualification standards (including body-level arbiter selection), scope limits.\n\nResume from: \"1A — arbiter qualification standards and selection; scope limits.\"\n\nRules: One gap at a time. Axioms are fixed. Nothing resolved is re-opened without explicit owner instruction. Show the master checklist after every resolution."
+  }
+}
