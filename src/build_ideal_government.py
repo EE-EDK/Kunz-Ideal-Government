@@ -121,10 +121,10 @@ def render_notes(notes: list[dict]) -> str:
         return ""
     quotes = "".join(
         f'<blockquote class="note"><p>{esc(n["quote"])}</p>'
-        f'<cite>Owner, {esc(n["at"])} (founding conversation)</cite></blockquote>'
+        f'<cite>Founder, {esc(n["at"])} (founding conversation)</cite></blockquote>'
         for n in notes
     )
-    return f'<div class="item__notes"><p class="item__notes-head">In the owner&rsquo;s words</p>{quotes}</div>'
+    return f'<div class="item__notes"><p class="item__notes-head">In the founder&rsquo;s words</p>{quotes}</div>'
 
 
 def render_reference(data: dict) -> str:

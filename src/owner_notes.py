@@ -1,8 +1,9 @@
 """Owner's own words, attached to the design items they answer.
 
-Every quote is a verbatim substring of one of the owner's messages in the
-2026-06-02 founding conversation. `verify()` checks each one against the
-transcript, so a paraphrase or a typo cannot reach the page.
+Every passage is a verbatim substring of one of the founder's messages in the
+2026-06-02 founding conversation. `verify()` checks each passage against the
+transcript. On the page an item's passages are joined into one block; the only
+edit is capitalising each passage's first letter.
 
 Run:  python3 src/owner_notes.py --transcript PATH          # verify only
       python3 src/owner_notes.py --transcript PATH --apply  # write into data/layers.json
@@ -128,18 +129,31 @@ def verify(transcript: Path) -> list[str]:
     return problems
 
 
+def _joined(passages: list[str]) -> str:
+    """One block of text from an item's passages. The only edit is to capitalise
+    the first letter of each passage; the wording is otherwise the founder's."""
+    return " ".join(p[:1].upper() + p[1:] for p in passages)
+
+
 def apply(data: dict) -> dict:
-    """Attach notes to items as data['layers'][i]['items'][j]['notes']."""
+    """Attach one combined note per item: data['layers'][i]['items'][j]['notes'].
+
+    An item with several passages gets a single entry, dated by the founding
+    conversation's day (2026-06-02, the only day the quoted messages come from).
+    """
     by_id: dict[str, dict] = {}
     for layer in data["layers"]:
         for item in layer["items"]:
             by_id[item["id"]] = item
     for item in by_id.values():
         item.pop("notes", None)
+    grouped: dict[str, list[str]] = {}
     for item_id, at, quote in NOTES:
         if item_id not in by_id:
             raise KeyError(f"note for unknown item {item_id!r}")
-        by_id[item_id].setdefault("notes", []).append({"at": at, "quote": quote})
+        grouped.setdefault(item_id, []).append(quote)
+    for item_id, passages in grouped.items():
+        by_id[item_id]["notes"] = [{"at": "2026-06-02", "quote": _joined(passages)}]
     return data
 
 
