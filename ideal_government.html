@@ -270,17 +270,20 @@ body {
   .item__desc { font-size:15px; }
   .files { gap:40px; }
   .footer { margin-top:64px; }
-  /* Mobile readability floor: nothing read below 11px. */
-  .file__rail-cat { font-size:11px; letter-spacing:0.24em; }
-  .toc__heading { font-size:11px; letter-spacing:0.2em; }
+  /* Mobile readability floor: nothing read below 12px (kunzhub audit). */
+  .file__rail-cat, .toc__heading, .ctl, .status-badge, .file__overline,
+  .file__date, .masthead__cap, .masthead__meta, .toc__catname, .toc__num,
+  .brand__sub, .legend, .footer__text, .search { font-size:12px; }
+  .file__rail-cat { letter-spacing:0.22em; }
+  .toc__heading { letter-spacing:0.2em; }
   .toc__list a { min-height:32px; align-items:center; }
-  .ctl { font-size:11px; min-height:32px; }
-  .status-badge { font-size:11.5px; letter-spacing:0.1em; }
-  .file__overline, .file__date, .masthead__cap, .masthead__meta { font-size:11.5px; }
-  .toc__catname { font-size:11.5px; }
-  .toc__num { font-size:11px; }
-  .footer__text { font-size:12px; }
+  .ctl { min-height:32px; }
+  .status-badge { letter-spacing:0.08em; }
   .subitems li { font-size:14px; }
+  .file__lede { font-size:16px; }
+  .paste__title { font-size:28px; }
+  .paste__label { font-size:12px; }
+  .paste__text { font-size:16px; }
 }
 @media print {
   .sidebar, .menu-toggle, .theme-toggle, .overlay, .atmos { display:none !important; }
@@ -304,7 +307,7 @@ body {
       <div class="sidebar__brand">
         <div class="brand__mark">Design Web &middot; v1</div>
         <div class="brand__title">Ideal Government <em>Design Web</em></div>
-        <div class="brand__sub">Compiled 2026.10.04 18:09</div>
+        <div class="brand__sub">Compiled 2026.10.04 18:12</div>
       </div>
       <nav class="toc" aria-label="Table of contents">
         <div class="toc__heading">Table of Contents</div>
