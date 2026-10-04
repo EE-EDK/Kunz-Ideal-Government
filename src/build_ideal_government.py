@@ -99,8 +99,14 @@ def render_item(item: dict) -> str:
             f'<li>{badge(s["status"])} <span>{esc(s["label"])}</span></li>' for s in subs
         )
         sub_html = f'<ul class="subitems">{lis}</ul>'
+    # An item with an explanation shows that alone: the desc is the same
+    # statement in shorter form and repeating it reads as a duplicate. Open
+    # items have no explanation, so their desc (the question) is the only text.
     explain = item.get("explanation")
-    explain_html = f'<p class="item__explain">{esc(explain)}</p>' if explain else ""
+    if explain:
+        text_html = f'<p class="item__explain">{esc(explain)}</p>'
+    else:
+        text_html = f'<p class="item__desc">{esc(item["desc"])}</p>'
     return (
         f'<details class="item" id="item-{esc(item["id"])}">'
         f'<summary class="item__row">'
@@ -109,8 +115,7 @@ def render_item(item: dict) -> str:
         f'{badge(item["status"])}</span>'
         f'<span class="item__chev" aria-hidden="true"><svg class="kh-icon"><use href="#kh-icon-expand"/></svg></span>'
         f'</summary>'
-        f'<div class="item__body">{explain_html}'
-        f'<p class="item__desc">{esc(item["desc"])}</p>{sub_html}{render_founder(item)}</div>'
+        f'<div class="item__body">{text_html}{sub_html}{render_founder(item)}</div>'
         f'</details>'
     )
 
