@@ -30,3 +30,9 @@ Read and process with `~/agents/venv/bin/python server/ingest.py list|show <id>|
 Published to kunzhub as a **public** page at `/p/ideal-government/`. Source of truth for
 the kunzhub copy is `ideal_government.html` in this repo (the only built page). Publish steps are in
 `Self-Host/sites/kunzhub` (`scripts/add-page.sh`).
+
+## Exception: public inbox (owner-approved 2026-10-04)
+The v2 design brief says the inbox must stay tailnet-only and never go through Caddy or Funnel.
+The owner has approved an exception: the inbox is served publicly through Caddy at
+`/p/ideal-government/api/*`, because the content is innocuous. The controls are the rate limits
+in `server/inbox_api.py` (honeypot, 5/hour per visitor, 100/day, 20 KB). Do not remove them.
