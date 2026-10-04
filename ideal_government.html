@@ -229,6 +229,9 @@ body {
 .theme-toggle { position:fixed; top:14px; right:14px; z-index:100; width:44px; height:44px; background:var(--ink-card);
   border:1px solid var(--ink-divider); color:var(--paper-soft); font-size:17px; cursor:pointer; border-radius:3px; font-family:var(--mono);
   display:flex; align-items:center; justify-content:center; transition:color .2s,border-color .2s,background .2s; }
+.theme-toggle .kh-icon { width:20px; height:20px; }
+:root.has-host-bar .menu-toggle, :root.has-host-bar .theme-toggle { top:56px; }
+@media (max-width:480px) { :root.has-host-bar .menu-toggle, :root.has-host-bar .theme-toggle { top:52px; } }
 .theme-toggle:hover, .theme-toggle:focus-visible, .menu-toggle:hover { background:var(--ink-elev); border-color:var(--gold); color:var(--gold); outline:none; }
 .overlay { display:none; position:fixed; inset:0; background:rgba(8,6,4,0.78); z-index:40; }
 .overlay.is-visible { display:block; }
@@ -298,18 +301,20 @@ body {
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
     <symbol id="kh-icon-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="m6 9 6 6 6-6"/></symbol>
     <symbol id="kh-icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></symbol>
+    <symbol id="kh-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></symbol>
+    <symbol id="kh-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
   </defs></svg>
   <div class="atmos" aria-hidden="true"><div class="atmos__vignette"></div><div class="atmos__grain"></div></div>
 
   <button class="menu-toggle" id="menuToggle" aria-label="Open table of contents"><svg class="kh-icon" aria-hidden="true"><use href="#kh-icon-menu"/></svg></button>
-  <button class="theme-toggle" id="themeToggle" aria-label="Switch theme" aria-pressed="false">&#9788;</button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Switch theme" aria-pressed="false"><svg class="kh-icon" aria-hidden="true"><use href="#kh-icon-sun"/></svg></button>
 
   <div class="shell">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar__brand">
         <div class="brand__mark">Design Web &middot; v1</div>
         <div class="brand__title">Ideal Government <em>Design Web</em></div>
-        <div class="brand__sub">Compiled 2026.10.04 18:14</div>
+        <div class="brand__sub">Compiled 2026.10.04 18:15</div>
       </div>
       <nav class="toc" aria-label="Table of contents">
         <div class="toc__heading">Table of Contents</div>
@@ -380,6 +385,13 @@ body {
   const $ = (s, c) => (c || document).querySelector(s);
   const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
 
+  /* Framed pages (kunzhub) inject a top bar just before </body>; wait for it. */
+  const flagHostBar = () => {
+    if (document.querySelector('.kh-frame-bar')) document.documentElement.classList.add('has-host-bar');
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', flagHostBar);
+  else flagHostBar();
+
   /* Mobile drawer */
   const sidebar = $('#sidebar'), overlay = $('#overlay'), toggle = $('#menuToggle');
   const openSidebar = () => { sidebar.classList.add('is-open'); overlay.classList.add('is-visible'); };
@@ -392,7 +404,7 @@ body {
   const paintTheme = (t) => {
     document.documentElement.setAttribute('data-theme', t);
     const day = t === 'day';
-    themeBtn.innerHTML = day ? '&#9790;' : '&#9788;';
+    themeBtn.innerHTML = '<svg class="kh-icon" aria-hidden="true"><use href="#kh-icon-' + (day ? 'moon' : 'sun') + '"/></svg>';
     themeBtn.setAttribute('aria-label', day ? 'Switch to night mode' : 'Switch to day mode');
     themeBtn.setAttribute('aria-pressed', String(day));
   };
