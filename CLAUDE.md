@@ -23,7 +23,7 @@ turns it into one HTML page in the persona-dossier style.
 ## Inbox (paste box)
 Paste text on the public page → `POST /p/ideal-government/api/inbox` (Caddy strips the prefix) →
 `server/inbox_api.py` on 127.0.0.1:8089 → `~/agent-box/ideal-government/inbox/`.
-Read and process with `python3 server/ingest.py list|show <id>|done <id>`. Nothing is deleted;
+Read and process with `~/agents/venv/bin/python server/ingest.py list|show <id>|done <id>`. Nothing is deleted;
 `done` moves an item to `processed/`. Unit: `deploy/ideal-government-inbox-api.service`.
 
 ## Hosting
