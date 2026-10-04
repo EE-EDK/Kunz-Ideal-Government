@@ -87,11 +87,8 @@ def count_items(data: dict) -> tuple[int, int]:
 
 
 def render_item(item: dict) -> str:
-    rows = [
-        f'<tr><td class="item__id">{esc(item["id"].upper())}</td>'
-        f'<td><strong>{esc(item["label"])}</strong><br><span class="item__desc">{esc(item["desc"])}</span></td>'
-        f'<td class="item__status">{badge(item["status"])}</td></tr>'
-    ]
+    """One design item as a native <details> row: closed shows label + status,
+    open shows the explanation, description and sub-items."""
     subs = item.get("subitems", [])
     sub_html = ""
     if subs:
@@ -99,13 +96,19 @@ def render_item(item: dict) -> str:
             f'<li>{badge(s["status"])} <span>{esc(s["label"])}</span></li>' for s in subs
         )
         sub_html = f'<ul class="subitems">{lis}</ul>'
+    explain = item.get("explanation")
+    explain_html = f'<p class="item__explain">{esc(explain)}</p>' if explain else ""
     return (
-        f'<div class="item" id="item-{esc(item["id"])}">'
-        f'<div class="item__row"><span class="item__id">{esc(item["id"].upper())}</span>'
-        f'<div class="item__body"><h4 class="item__label">{esc(item["label"])}</h4>'
+        f'<details class="item" id="item-{esc(item["id"])}">'
+        f'<summary class="item__row">'
+        f'<span class="item__id">{esc(item["id"].upper())}</span>'
+        f'<span class="item__head"><span class="item__label">{esc(item["label"])}</span>'
+        f'{badge(item["status"])}</span>'
+        f'<span class="item__chev" aria-hidden="true"><svg class="kh-icon"><use href="#kh-icon-expand"/></svg></span>'
+        f'</summary>'
+        f'<div class="item__body">{explain_html}'
         f'<p class="item__desc">{esc(item["desc"])}</p>{sub_html}</div>'
-        f'<div class="item__status">{badge(item["status"])}</div></div>'
-        f'</div>'
+        f'</details>'
     )
 
 
@@ -143,9 +146,10 @@ def render_layer(layer: dict, n: int, cat_label: str) -> str:
 
 
 def legend_html() -> str:
-    return "".join(
+    badges = "".join(
         f'<span>{badge(k)}</span>' for k in ("resolved", "inprogress", "notstarted", "flagged")
     )
+    return badges + '<span class="legend__hint">Select an item to read its full text.</span>'
 
 
 def render_nav(data: dict) -> str:
@@ -390,17 +394,27 @@ body {
 
 /* Items — the content inside each file */
 .legend { display:flex; flex-wrap:wrap; gap:10px 14px; margin-bottom:28px; font-family:var(--mono); font-size:10px; color:var(--paper-faded); }
-.item { border-bottom:1px solid var(--ink-divider); padding:18px 0; }
+.item { border-bottom:1px solid var(--ink-divider); }
 .item:last-child { border-bottom:none; }
-.item__row { display:grid; grid-template-columns:56px 1fr auto; gap:16px; align-items:start; }
-.item__id { font-family:var(--mono); font-size:11.5px; color:var(--paper-ghost); letter-spacing:0.08em; padding-top:4px; }
-.item__label { font-family:var(--serif); font-variation-settings:"opsz" 36,"SOFT" 0; font-weight:500; font-size:19px;
-  line-height:1.25; color:var(--paper); margin-bottom:6px; }
+.item summary { list-style:none; cursor:pointer; display:grid; grid-template-columns:56px 1fr 18px; gap:16px;
+  align-items:start; padding:18px 0; }
+.item summary::-webkit-details-marker { display:none; }
+.item summary:focus-visible { outline:1px dashed var(--gold); outline-offset:4px; }
+.item summary:hover .item__label { color:var(--gold-bright); }
+.item__id { font-family:var(--mono); font-size:11.5px; color:var(--paper-ghost); letter-spacing:0.08em; padding-top:6px; }
+.item__head { display:flex; flex-direction:column; gap:8px; align-items:flex-start; min-width:0; }
+.item__label { display:block; font-family:var(--serif); font-variation-settings:"opsz" 36,"SOFT" 0; font-weight:500;
+  font-size:19px; line-height:1.25; color:var(--paper); transition:color .2s; }
+.item__chev { color:var(--gold); width:18px; height:18px; padding-top:4px; transition:transform .3s ease; }
+.item[open] > summary .item__chev { transform:rotate(180deg); }
+.item__body { padding:0 0 22px 72px; }
+.item__explain { font-family:var(--serif); font-style:italic; font-variation-settings:"opsz" 18,"SOFT" 60; font-size:16px;
+  line-height:1.65; color:var(--paper); margin-bottom:12px; }
 .item__desc { font-family:var(--serif); font-variation-settings:"opsz" 18,"SOFT" 0; font-weight:350; font-size:16px;
   line-height:1.6; color:var(--paper-soft); }
-.item__status { padding-top:3px; }
-.subitems { list-style:none; margin:12px 0 0 0; padding:0 0 0 2px; }
-.subitems li { font-family:var(--sans); font-size:13.5px; color:var(--paper-faded); padding:4px 0 4px 0; display:flex; gap:10px; align-items:center; }
+.legend__hint { color:var(--paper-ghost); font-style:italic; }
+.subitems { list-style:none; margin:14px 0 0 0; padding:0 0 0 2px; }
+.subitems li { font-family:var(--sans); font-size:13.5px; color:var(--paper-faded); padding:4px 0; display:flex; gap:10px; align-items:center; }
 .status-badge { display:inline-block; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.12em;
   padding:3px 9px; border-radius:2px; font-weight:500; white-space:nowrap; }
 .status-success  { background:rgba(107,159,60,0.14); color:var(--alpine); }
@@ -472,10 +486,10 @@ body {
   .file__rail { padding-right:12px; min-height:96px; }
   .file__rail-num { font-size:38px; }
   .file__title { font-size:26px; }
-  .item__row { grid-template-columns:40px 1fr; }
-  .item__status { grid-column:2; padding-top:0; }
+  .item summary { grid-template-columns:40px 1fr 18px; gap:12px; }
+  .item__body { padding-left:52px; }
   .item__label { font-size:15.5px; }
-  .item__desc { font-size:14px; line-height:1.55; }
+  .item__desc, .item__explain { font-size:14px; line-height:1.55; }
   .files { gap:40px; }
   .footer { margin-top:64px; }
   /* Mobile readability floor: nothing read below 12px (kunzhub audit). */
@@ -638,8 +652,19 @@ JS = """
     const body = file && $('.file__body', file);
     setOpen(file, !(body && body.classList.contains('is-open')));
   };
-  window.expandAll = () => $$('.file').forEach(f => setOpen(f, true));
-  window.collapseAll = () => $$('.file').forEach(f => setOpen(f, false));
+  window.expandAll = () => { $$('.file').forEach(f => setOpen(f, true)); $$('details.item').forEach(d => d.open = true); };
+  window.collapseAll = () => { $$('.file').forEach(f => setOpen(f, false)); $$('details.item').forEach(d => d.open = false); };
+
+  /* Print the full text, then restore the on-screen state. */
+  let openForPrint = [];
+  window.addEventListener('beforeprint', () => {
+    openForPrint = $$('details.item').filter(d => !d.open);
+    openForPrint.forEach(d => d.open = true);
+  });
+  window.addEventListener('afterprint', () => {
+    openForPrint.forEach(d => d.open = false);
+    openForPrint = [];
+  });
 
   /* TOC navigation — open, scroll, mark active */
   const tocLinks = new Map($$('.toc__list a').map(a => [a.getAttribute('href').slice(1), a]));
