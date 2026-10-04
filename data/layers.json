@@ -14,381 +14,201 @@
           "id": "c1",
           "label": "Additive-only amendment",
           "status": "resolved",
-          "desc": "3/4 coordination body + 75% popular supermajority to add. Never subtractive.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Adding requires a 3/4 vote by some form of yet to be defined leadership and  a 75 percent popular vote if grassroots defined. This document can be added to but never taken away from."
-            }
-          ]
+          "desc": "3/4 coordination body + 75% popular supermajority to add. Never subtractive."
         },
         {
           "id": "c2",
           "label": "Natural rights recognized",
           "status": "resolved",
-          "desc": "Rights recognized, not granted. Source-agnostic: deism, Christianity, secular reason.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "I believe there is an objective natural law of rights that can be defended through deism, Christianity, or several other secular means as well"
-            }
-          ]
+          "desc": "Rights recognized, not granted. Source-agnostic: deism, Christianity, secular reason."
         },
         {
           "id": "c3",
           "label": "NAP as default norm",
           "status": "resolved",
-          "desc": "Non-Aggression Principle is the baseline behavioral standard. Voluntarism first.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "The nonaggression principle is a good place to start I would say that I try to lead voluntarists first."
-            }
-          ]
+          "desc": "Non-Aggression Principle is the baseline behavioral standard. Voluntarism first."
         },
         {
           "id": "c4",
           "label": "10th/9th analog",
           "status": "resolved",
-          "desc": "All unlisted powers default explicitly to cells. No implied federal authority.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "I would say Switzerland and its loosely affiliated cantons with individual constitutions is pretty close. The 10th US amendment will apply in combination with the 9th but directly clearly pointed to the cells."
-            }
-          ]
+          "desc": "All unlisted powers default explicitly to cells. No implied federal authority."
         },
         {
           "id": "c5",
           "label": "No international authority",
           "status": "resolved",
           "desc": "System sovereignty is absolute. International cooperation is transactional, not binding.",
-          "explanation": "Cooperation with NATO and similar bodies only as needed for true global threats or worldwide economic crashes. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "We won't recognize international authority, working with NATO etc. but only as needed to address true global threats or worldwide economy crashes etc."
-            }
-          ]
+          "explanation": "Cooperation with NATO and similar bodies only as needed for true global threats or worldwide economic crashes."
         },
         {
           "id": "c6",
           "label": "Speech — radical, NAP-bounded",
           "status": "resolved",
-          "desc": "Maximum freedom of speech. NAP is the only limit. Cells handle nuance.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Next would be a radical freedom of speech based on NAP. Rules for handling nuance are held by the cells."
-            }
-          ]
+          "desc": "Maximum freedom of speech. NAP is the only limit. Cells handle nuance."
         },
         {
           "id": "c7",
           "label": "Religion — NAP-tested",
           "status": "resolved",
-          "desc": "Subsumed under speech. Voluntary practice protected. Governance application that mandates non-voluntary compliance = constitutional void.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Freedom of religion will wrap under speech but caveat issues like Islamism under NAP that have ANY rules that directly violate freedoms noted in cells without a method of voluntary following. It would effectively make shariah law for example a non-starter."
-            }
-          ]
+          "desc": "Subsumed under speech. Voluntary practice protected. Governance application that mandates non-voluntary compliance = constitutional void."
         },
         {
           "id": "c8",
           "label": "Arms — tiered",
           "status": "resolved",
           "desc": "Household issue baseline. Personal through Class III constitutional. Cell militia for heavy. WMD equally distributed.",
-          "explanation": "Concealed carry and self-manufacture are constitutional up to Class III (automatic infantry weapons). Explosives, missiles and armor are reserved to cell militias, reachable by individuals only through difficult, restrictive processes. Making, buying and selling carry cell nuance. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Weapons will be issued per defined household for all cells. Conceal carry and self manufacture are core items up to class III which is automatic infantry weapons. Explosives, missiles, tanks, etc. are reserved for individual militias of cells, but can be accessed with difficult restrictive processes."
-            }
-          ]
+          "explanation": "Concealed carry and self-manufacture are constitutional up to Class III (automatic infantry weapons). Explosives, missiles and armor are reserved to cell militias, reachable by individuals only through difficult, restrictive processes. Making, buying and selling carry cell nuance."
         },
         {
           "id": "c9",
           "label": "Travel — citizen floor",
           "status": "resolved",
-          "desc": "Search/seizure protections apply everywhere. Cell-licensed nuance (driving, etc.).",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Freedom of travel applies to a base set of elements like search and seizure everywhere, but cell constitutions can regulate nuance like licenses or training requirements for driving etc. There will be no DMV though, either it is private or small and localized to centers of authority within the cells."
-            }
-          ]
+          "desc": "Search/seizure protections apply everywhere. Cell-licensed nuance (driving, etc.)."
         },
         {
           "id": "c10",
           "label": "V+1 criminal standard",
           "status": "resolved",
           "desc": "Retributive proportionality plus one degree for violent crime. Massive deterrent architecture.",
-          "explanation": "Owner's framing: robbing and beating someone to death would mean a slower beating to death. Applies to multi-factor battery, murder, rape and torture, not to fights or threats. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Core obvious rights would be eye for eye on violent crimes +1 , maybe call it V+1 , which means robbing and beating someone to death would mean a slower beating of that individual to death--massive deterrent against violent crimes that aren't just fights or threats etc. but multi fact battery, murder, rape, torture."
-            }
-          ]
+          "explanation": "Owner's framing: robbing and beating someone to death would mean a slower beating to death. Applies to multi-factor battery, murder, rape and torture, not to fights or threats."
         },
         {
           "id": "c11",
           "label": "Execution — tiered delegation",
           "status": "resolved",
-          "desc": "Victim (first right) → volunteer pool (random selection) → automated chamber. Randomized actuation, 3 fast methods, fire cleanup. No permanent executor class.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "The execution of the sentence will be given to the victim when there is a clear one for choice. After that, there will be a body of volunteers willing to pool a random selection, and on the rare event that an entire cell is against volunteering at all, we will use technology as a failsafe. This whole system only matters if the victim and all others don't participate."
-            }
-          ]
+          "desc": "Victim (first right) → volunteer pool (random selection) → automated chamber. Randomized actuation, 3 fast methods, fire cleanup. No permanent executor class."
         },
         {
           "id": "c12",
           "label": "National security body",
           "status": "resolved",
           "desc": "Transparently chartered. Subsumes FBI/CIA/NSA functions. No domestic surveillance authority. Violations: V+1 applied, publicly streamed.",
-          "explanation": "Cell-citizens share the burden of staffing national security (the FBI, CIA and NSA functions). Workers have no special power to spy on citizens or profit from access. Discovered abuse means long, painful, publicly streamed death. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Cell-citizens will share the burden of maintaining and handling the national security elements for the body These groups do not have unique powers to spy on citizenry or use their information access to benefit etc. Discovery of such issues results in long painful and publicly streamed death."
-            }
-          ]
+          "explanation": "Cell-citizens share the burden of staffing national security (the FBI, CIA and NSA functions). Workers have no special power to spy on citizens or profit from access. Discovered abuse means long, painful, publicly streamed death."
         },
         {
           "id": "c13",
           "label": "Oversight body",
           "status": "resolved",
           "desc": "Elected separately. Dual function: internal accountability + diplomatic interface. Hard-scoped by design.",
-          "explanation": "A small group elected separately by the cells. It acts as ambassadors and as local judges with prosecution authority over national-security workers, with scope kept narrow so it can build no leverage or military capability. With the national-security body it forms a two-part, self-correcting structure in place of three branches. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "There actually should be a small dedicated group also separately elected by the cells to be the oversight for this group But they will have very limited scope to prevent building any possible level of leverage or militaristic capability that threatens the whole."
-            }
-          ]
+          "explanation": "A small group elected separately by the cells. It acts as ambassadors and as local judges with prosecution authority over national-security workers, with scope kept narrow so it can build no leverage or military capability. With the national-security body it forms a two-part, self-correcting structure in place of three branches."
         },
         {
           "id": "c14",
           "label": "Immigration — tiered",
           "status": "resolved",
           "desc": "Foreign nationals: zero constitutional standing. Tiered entry (tourist/education/business = cell-permitted, short-term). Body floor + cell acceptance. Sharp penalties. No international body authority over borders.",
-          "explanation": "First steps toward citizenship are body-wide. After the body requirements are met, the applicant must choose a cell and be accepted by a cell representative. The cell sets its own citizenship rules and names (e.g. Iron-Citizen, FreeFarming-Citizen). The path involves social or military service, learning the language and a longer period living in the chosen cell's culture. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Also, for the right to travel, this only applies to citizens. Foreign actors have zero constitutional backing. They will be strictly controlled in the country borders and the only path to citizenship is a grueling set of requirements that involve social/military service, learning the language, completing a longer amount of time in the culture of choice with a cell, but there will be sharp penalties for violations of immigration law. Just applying to and gaining the first steps is body-wide. The individual must select and be accepted by a representative of a cell. The cell defines all rules for citizenship for itself as a cell-citizen (likely the name like Iron-citizen or FreeFarming-citizen)."
-            }
-          ]
+          "explanation": "First steps toward citizenship are body-wide. After the body requirements are met, the applicant must choose a cell and be accepted by a cell representative. The cell sets its own citizenship rules and names (e.g. Iron-Citizen, FreeFarming-Citizen). The path involves social or military service, learning the language and a longer period living in the chosen cell's culture."
         },
         {
           "id": "c15",
           "label": "Resource contribution system",
           "status": "resolved",
           "desc": "Value-percentage based. 10-year review cycle. No default income tax.",
-          "explanation": "Owner's example: a manufacturing-heavy cell's infrastructure sector with a 5% value share gives 5% of its steel beams to a body building for international trade. Contributions are product or profit percentages, agreed by all cells, adjustable as markets open or change, reviewed every 10 years. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Any items required for national level or external facing items for all cells will be funded by a clear dynamic value based system. This can be actual product, or profit percentages of product. As an example, the infrastructure sector in a cell that is manufacturing heavy could have a 5% value share that means giving 5% of its steel production for beams to build a federal building for international trade etc. These will be agreed upon by all cells and can be adjusted as new markets open or change every 10 years (long economic cycle)."
-            }
-          ]
+          "explanation": "Owner's example: a manufacturing-heavy cell's infrastructure sector with a 5% value share gives 5% of its steel beams to a body building for international trade. Contributions are product or profit percentages, agreed by all cells, adjustable as markets open or change, reviewed every 10 years."
         },
         {
           "id": "c16",
           "label": "Parity number system",
           "status": "resolved",
           "desc": "Technocratic, sector-owned, publicly transparent. All businesses require parity number at founding.",
-          "explanation": "Jointly set and controlled by the generators and owners of value. A new business works with authorities to develop its parity number. Values are dynamic and can change at any time. It is up to owners to enhance their number. The system is readily accessible. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "The parity system has to be a technocratic item. It should be jointly set and controlled by the generators and owners of value. The system itself should be readily accessible. Even SaaS or other items can be given a parity number, in fact that will be a requirement for all items of work or industry or service etc. One core item for a new business is to work with authorities to develop a parity number that balances the value output based on a central understanding of transparent worth that is dynamic."
-            }
-          ]
+          "explanation": "Jointly set and controlled by the generators and owners of value. A new business works with authorities to develop its parity number. Values are dynamic and can change at any time. It is up to owners to enhance their number. The system is readily accessible."
         },
         {
           "id": "c17",
           "label": "Progressive wealth equation",
           "status": "resolved",
           "desc": "Significant wealth permitted. Takeover-scale accumulation structurally prevented via ceiling.",
-          "explanation": "A tag on the percentage of value generated, scaling to a clear degree regardless of cell. It allows doing very well but stops takeover-level wealth and untenable poverty. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Balance should be based on resource control primarily, and there can be basic anti monopoly rules set by cells for items like software or service etc. Wealth will not be prevented though. That will not prevent doing 'really' well but will stop takeover level wealth or levels of poverty that are untenable."
-            }
-          ]
+          "explanation": "A tag on the percentage of value generated, scaling to a clear degree regardless of cell. It allows doing very well but stops takeover-level wealth and untenable poverty."
         },
         {
           "id": "c18",
           "label": "Birth accounts",
           "status": "resolved",
           "desc": "Body floor + cell additive. Funded from cell value percentages. No citizen starts at zero.",
-          "explanation": "A smaller body floor plus a cell-governed additive amount. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Birth accounts come from value percentages in each cell. There is a smaller floor by body then a cell governed additive. There will also be a starting bank of sorts for all citizens at birth that can grow or be used for a variety of items and it's up to the citizen to handle it appropriately when of age"
-            }
-          ]
+          "explanation": "A smaller body floor plus a cell-governed additive amount."
         },
         {
           "id": "c19",
           "label": "No mandatory welfare",
           "status": "resolved",
-          "desc": "Voluntary support system + birth accounts replaces mandatory welfare.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "That said there will be no mandatory social system like welfare, instead, a voluntary system will be setup and marketed by the body level for needs"
-            }
-          ]
+          "desc": "Voluntary support system + birth accounts replaces mandatory welfare."
         },
         {
           "id": "c20",
           "label": "Early adulthood petition",
           "status": "resolved",
           "desc": "12+ with 75% judicial panel + mandatory parental inclusion. Rare genius cases can access agency early.",
-          "explanation": "Hearing details are set by the cell. Parents are always part of the hearing. Passing needs a strict 75% agreement of the hearing group. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Btw one can petition at any age above 12 for adulthood based on a convening of judicial hearing details set by cell--but parents are always a part of it, and it is expected to be a strict 75% agreement of the hearing group. This allows genius level mature rare kids to secure power early enough to make an outsized difference while healthy and young."
-            }
-          ]
+          "explanation": "Hearing details are set by the cell. Parents are always part of the hearing. Passing needs a strict 75% agreement of the hearing group."
         },
         {
           "id": "c21",
           "label": "Cell absorption rules",
           "status": "resolved",
           "desc": "Competitive incentive market. 90% dual supermajority (both cells). Accumulation ceiling enforced.",
-          "explanation": "Struggling cells (below the floor threshold for a defined period) become eligible for absorption offers. Competing absorbers offer incentive packages (birth accounts, resource access, transfer perks, reduced contributions). The target keeps a 90% veto. No cell may exceed a set share of the total body resource base; approaching the ceiling ends eligibility to absorb, and the excess goes to new-cell formation or a struggling-cell recovery fund. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Absorption requires 90 percent of both affected cells to agree. A poor cell should still have a relative balance of resources. Whatever those are still matters to the body. Absorbing interests can offer incentives for initial absorption to drive a level of competition. That said, resource balancing still exists so a cell can't absorb all cells for control. There needs to be a rebalancing that incentivizes the absorber but limits overall accumulation."
-            }
-          ]
+          "explanation": "Struggling cells (below the floor threshold for a defined period) become eligible for absorption offers. Competing absorbers offer incentive packages (birth accounts, resource access, transfer perks, reduced contributions). The target keeps a 90% veto. No cell may exceed a set share of the total body resource base; approaching the ceiling ends eligibility to absorb, and the excess goes to new-cell formation or a struggling-cell recovery fund."
         },
         {
           "id": "c22",
           "label": "Cell disbandment — prohibited",
           "status": "resolved",
-          "desc": "Cells cannot be dissolved. Only absorbed with dual supermajority.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Disbandment is not allowed."
-            }
-          ]
+          "desc": "Cells cannot be dissolved. Only absorbed with dual supermajority."
         },
         {
           "id": "c23",
           "label": "New cell formation process",
           "status": "resolved",
           "desc": "Body-wide formal process. Resource allocation review triggered on instantiation.",
-          "explanation": "Founding geography: no cell holds the richest sources of several high-value resources (uranium, platinum, gold, tantalum) together. Where resources sit close together, cells are smaller. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "New cells setup will follow formal processes involving all cells like in the beginning of resource allocation on instantiation of the country. There should be no cell that has the richest of all sources of say uranium, platinum, gold, tantalum all in one area."
-            }
-          ]
+          "explanation": "Founding geography: no cell holds the richest sources of several high-value resources (uranium, platinum, gold, tantalum) together. Where resources sit close together, cells are smaller."
         },
         {
           "id": "c24",
           "label": "WMD equal distribution",
           "status": "resolved",
           "desc": "Capability-defined (10,000+ casualties OR 1+ sq mile radius), technology-agnostic. Equal custody across cells. Cross-cell manning. No single-cell monopoly.",
-          "explanation": "A body-wide clearance system with strict vetting draws equal numbers of participants across sectors. Where a function needs more people, representatives from other cells serve rotations or contracts, but headcount stays equal. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "All weapons of mass destruction that become accessible...defined by some body metric like capable of 10000 or more death or more than a square mile of damage or something Will be equally shared between all cells out of mutual survival and need to balance the extreme nature. This means a body-wide clearance system with strict vetting that sources equal numbers of participants across sectors based on needed resources."
-            }
-          ]
+          "explanation": "A body-wide clearance system with strict vetting draws equal numbers of participants across sectors. Where a function needs more people, representatives from other cells serve rotations or contracts, but headcount stays equal."
         },
         {
           "id": "c25",
           "label": "Inter-cell movement",
           "status": "resolved",
           "desc": "Citizen-preferenced process. Merit/achievement transfer pathway. Body citizenship portable.",
-          "explanation": "Transfers follow a process like immigration, with preference to existing citizens. Accomplishments and awards can unlock transfer. [VERIFIED: 2026-06-02 transcript]",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "The new item is whether citizens of cells can move cells. This can be a process similar to immigration but preference given to citizens. Also perks could allow transfer due to accomplishment, award, etc."
-            }
-          ]
+          "explanation": "Transfers follow a process like immigration, with preference to existing citizens. Accomplishments and awards can unlock transfer."
         },
         {
           "id": "c26",
           "label": "Military posture",
           "status": "resolved",
           "desc": "No standing army. Universal service stays: a training and readiness term for all eligible men and women, disability-inclusive by role. Cell militias handle local events. Large-scale conflict is pre-committed by cell-to-body agreements with preordained cell specializations. Deployment beyond training is volunteers first; conscription only at grave trigger points (merit- and numbers-based, with perks, fixed rotations, escalating multi-cell override to extend). The national security body (c12) runs the outward-facing intelligence and development service, funded by cell contracts.",
-          "explanation": "Universal service and citizen activation [VERIFIED: 2026-06-02 transcript]. Volunteer-first deployment, conscription triggers and pre-committed specializations [RECALLED: 2026-09-13 memory log]. Reconciled [DELEGATED 2026-10-04: agent pick under owner instruction, awaiting owner close]: the recalled text said 'no universal service', which would reverse a resolved item under an additive-only constitution. Read as no universal deployment. Original wording is kept in the catalog decision log.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "A mandatory service period of all eligible men and women with caveats for disability etc. Even physical disability will be utilized though. Training and upkeep will happen at all times, but given all citizens are potential troops, there is no need for a wasteful federal government backed standing army. Only external threats pull federal-like military action together."
-            }
-          ]
+          "explanation": "Universal service and citizen activation. Volunteer-first deployment, conscription triggers and pre-committed specializations."
         },
         {
           "id": "c27",
           "label": "Justice detail — cell jurisdiction",
           "status": "resolved",
           "desc": "Bail, jury and punishment detail are cell jurisdiction. Diverse cell justice systems are necessary, like biological cells. AI may assist jury and peer processes.",
-          "explanation": "Cell jurisdiction over bail, jury and punishment [VERIFIED: 2026-06-02 transcript]. AI assistance [RECALLED: 2026-09-13 memory log].",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "The assumption is that cells will set bail and punishment rules, trial by what type of jury etc. to maintain a diverse and localized system that more closely reflects those close to the rules."
-            }
-          ]
+          "explanation": "Cell jurisdiction over bail, jury and punishment."
         },
         {
           "id": "c28",
           "label": "Emergency tax",
           "status": "resolved",
           "desc": "Flat, voted at cell or body level, hard-capped, hard-stopped. Sunset clauses are constitutional.",
-          "explanation": "Decided [VERIFIED: 2026-06-02 transcript]; confirmed [RECALLED: 2026-09-13 memory log]. Purpose in the owner's words: prevents infinite systems that justify their existence by never fixing streets or never cutting costs.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "If needed, a tax can be levied, but it will be voted either at cell or body level and will always be a flat limited tax with clear rules and uniquely with hard stops. This prevents infinite systems that justify their existence with fraud or abuse by never fixing streets or never cutting costs etc."
-            }
-          ]
+          "explanation": "Purpose: prevents infinite systems that justify their existence by never fixing streets or never cutting costs."
         },
         {
           "id": "c29",
           "label": "Project-based funding entities",
           "status": "resolved",
           "desc": "Scoped, funded to their cohort's estimate, then refocused, disbanded or absorbed at completion.",
-          "explanation": "Decided [VERIFIED: 2026-06-02 transcript] (owner's example: a body formed to beat a blight); confirmed [RECALLED: 2026-09-13 memory log].",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "If a cell based government like entity is setup to tackle ...lets say a blight, they will be given the needed amounts estimated by their cohort to get scientists, international assistance, production of any chemical agents needed etc. And then when the blight is gone or finished, the group is either refocused, or disbanded and absorbed back into another role"
-            }
-          ]
+          "explanation": "Owner's example: a body formed to beat a blight."
         },
         {
           "id": "c30",
           "label": "Voluntary-service incentives",
           "status": "resolved",
           "desc": "Volunteering for internal problems earns benefits such as tax reduction or promotion weighting (owner's example: 10%).",
-          "explanation": "Decided [VERIFIED: 2026-06-02 transcript]; confirmed [RECALLED: 2026-09-13 memory log]. Pairs with c26: volunteer deployment is what earns these.",
-          "notes": [
-            {
-              "at": "2026-06-02",
-              "quote": "Would likely require some level of benefit for their volunteering to assist an internal problem...like a 10% weight toward promotion or position or something...or maybe a reduction in taxes required for future efforts)."
-            }
-          ]
+          "explanation": "Pairs with c26: volunteer deployment is what earns these."
         }
       ]
     },
@@ -1023,7 +843,7 @@
     {
       "id": "1A-sub — Judiciary committee",
       "date": "2026-09-13",
-      "body": "Hybrid of Options C and D (amended 2026-09-13):\n  - AI applies a published evidentiary rubric by default.\n  - Either party may contest and escalate, with counsel, to a\n    sortition-drawn committee bound by the same rubric.\n  - The rotating arbiter panel audits only when a decision is contested,\n    never by random sample.\n  SOURCE NOTE [RECALLED]: recorded from the project memory log. The log names\n  both a \"sortition-drawn committee\" and a \"rotating arbiter panel\" and does\n  not say whether they are the same body. Verify against the 2026-09-13\n  session transcript."
+      "body": "Hybrid of Options C and D (amended 2026-09-13):\n  - AI applies a published evidentiary rubric by default.\n  - Either party may contest and escalate, with counsel, to a\n    sortition-drawn committee bound by the same rubric.\n  - The rotating arbiter panel audits only when a decision is contested,\n    never by random sample.\n"
     },
     {
       "id": "1C — Absorbs 6B",
