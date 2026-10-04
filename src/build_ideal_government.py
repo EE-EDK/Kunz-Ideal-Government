@@ -491,6 +491,7 @@ body {
   .file__lede { font-size:16px; }
   .paste__title { font-size:28px; }
   .paste__label { font-size:12px; }
+  .paste__cap { font-size:12px; }
   .masthead__meta { gap:6px 16px; }
   .masthead__meta .dot { display:none; }
   .paste__text { font-size:16px; }
