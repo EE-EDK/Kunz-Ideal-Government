@@ -196,6 +196,38 @@ def render_reference(data: dict) -> str:
             f'<section class="ref" id="priority"><h2 class="ref__title">Priority queue</h2>'
             f'<ol class="ref__list">{rows}</ol></section>'
         )
+    if data.get("working_principles"):
+        rows = "".join(
+            f'<li class="ref__row"><span class="ref__num">{n:02d}</span>'
+            f'<div><p class="ref__text">{esc(p)}</p></div></li>'
+            for n, p in enumerate(data["working_principles"], start=1)
+        )
+        parts.append(
+            f'<section class="ref" id="principles"><h2 class="ref__title">Working principles</h2>'
+            f'<ol class="ref__list">{rows}</ol></section>'
+        )
+    if data.get("dropped"):
+        rows = "".join(
+            f'<li class="ref__row"><span class="ref__num">&middot;</span>'
+            f'<div><p class="ref__name">{esc(d["what"])}</p>'
+            f'<p class="ref__text">{esc(d["why"])}</p></div></li>'
+            for d in data["dropped"]
+        )
+        parts.append(
+            f'<section class="ref" id="dropped"><h2 class="ref__title">Dropped and superseded</h2>'
+            f'<ol class="ref__list">{rows}</ol></section>'
+        )
+    if data.get("gaps"):
+        rows = "".join(
+            f'<li class="ref__row"><span class="ref__num">&middot;</span>'
+            f'<div><p class="ref__name">{esc(g["what"])}</p>'
+            f'<p class="ref__text">{esc(g["why"])}</p></div></li>'
+            for g in data["gaps"]
+        )
+        parts.append(
+            f'<section class="ref" id="gaps"><h2 class="ref__title">Gaps in the record</h2>'
+            f'<ol class="ref__list">{rows}</ol></section>'
+        )
     if not parts:
         return ""
     return f'<div class="reference">{"".join(parts)}</div>'
@@ -267,10 +299,15 @@ def render_nav(data: dict) -> str:
             ("architecture", "Core architecture"),
             ("resolutions", "Resolution log"),
             ("priority", "Priority queue"),
+            ("principles", "Working principles"),
+            ("dropped", "Dropped and superseded"),
+            ("gaps", "Gaps in the record"),
         )
         if data.get(
             {"axioms": "axioms", "architecture": "core_architecture",
-             "resolutions": "resolution_log", "priority": "priority_queue"}[key]
+             "resolutions": "resolution_log", "priority": "priority_queue",
+             "principles": "working_principles", "dropped": "dropped",
+             "gaps": "gaps"}[key]
         )
     ]
     if ref_links:
