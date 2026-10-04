@@ -110,13 +110,27 @@ def render_item(item: dict) -> str:
         f'<span class="item__chev" aria-hidden="true"><svg class="kh-icon"><use href="#kh-icon-expand"/></svg></span>'
         f'</summary>'
         f'<div class="item__body">{explain_html}'
-        f'<p class="item__desc">{esc(item["desc"])}</p>{sub_html}{render_notes(item.get("notes", []))}</div>'
+        f'<p class="item__desc">{esc(item["desc"])}</p>{sub_html}{render_founder(item)}</div>'
         f'</details>'
     )
 
 
-def render_notes(notes: list[dict]) -> str:
-    """The owner's own words for this item, verbatim, each dated."""
+def render_founder(item: dict) -> str:
+    """Resolved items keep the founder's words behind a closed disclosure, so
+    the statement reads clean by default. Other items show them inline."""
+    notes = item.get("notes", [])
+    if not notes or item["status"] != "resolved":
+        return render_notes(notes)
+    return (
+        f'<details class="founder-words">'
+        f'<summary class="founder-words__toggle">Founder&rsquo;s words'
+        f'<svg class="kh-icon" aria-hidden="true"><use href="#kh-icon-expand"/></svg></summary>'
+        f'{render_notes(notes, heading=False)}</details>'
+    )
+
+
+def render_notes(notes: list[dict], heading: bool = True) -> str:
+    """The founder's words for this item, each dated."""
     if not notes:
         return ""
     quotes = "".join(
@@ -124,7 +138,8 @@ def render_notes(notes: list[dict]) -> str:
         f'<cite>Founder, {esc(n["at"])} (founding conversation)</cite></blockquote>'
         for n in notes
     )
-    return f'<div class="item__notes"><p class="item__notes-head">In the founder&rsquo;s words</p>{quotes}</div>'
+    head = '<p class="item__notes-head">In the founder&rsquo;s words</p>' if heading else ''
+    return f'<div class="item__notes">{head}{quotes}</div>'
 
 
 def render_reference(data: dict) -> str:
@@ -640,6 +655,17 @@ REF_CSS = r"""<style>
 .ref__log { white-space:pre-wrap; font-family:var(--sans); font-size:14px; line-height:1.6; color:var(--paper-faded);
   margin:0; }
 .item__date { font-family:var(--mono); font-size:11px; color:var(--paper-ghost); margin-left:12px; }
+.founder-words { margin-top:16px; }
+.founder-words__toggle { list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold);
+  border:1px solid var(--ink-divider); padding:6px 10px; background:transparent; }
+.item summary.founder-words__toggle { display:inline-flex; grid-template-columns:none; gap:8px; padding:6px 10px; }
+.founder-words__toggle::-webkit-details-marker { display:none; }
+.founder-words__toggle:hover { border-color:var(--gold); }
+.founder-words__toggle:focus-visible { outline:1px dashed var(--gold); outline-offset:3px; }
+.founder-words__toggle .kh-icon { width:12px; height:12px; transition:transform .2s; }
+.founder-words[open] > .founder-words__toggle .kh-icon { transform:rotate(180deg); }
+.founder-words .item__notes { border-top:none; margin-top:12px; padding-top:0; }
 @media (max-width: 600px) {
   .ref__title { font-size:24px; }
   .ref__row { grid-template-columns:32px 1fr; gap:10px; }

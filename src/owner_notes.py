@@ -151,10 +151,6 @@ def apply(data: dict) -> dict:
     for item_id, at, quote in NOTES:
         if item_id not in by_id:
             raise KeyError(f"note for unknown item {item_id!r}")
-        # Resolved items show clean statements only; their founder notes are
-        # kept in data/ledger.json, not on the page.
-        if by_id[item_id]["status"] == "resolved":
-            continue
         grouped.setdefault(item_id, []).append(quote)
     for item_id, passages in grouped.items():
         by_id[item_id]["notes"] = [{"at": "2026-06-02", "quote": _joined(passages)}]
