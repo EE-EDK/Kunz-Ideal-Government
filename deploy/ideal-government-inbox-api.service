@@ -1,0 +1,16 @@
+[Unit]
+Description=Ideal Government inbox - paste text on the kunzhub page, retrieve it with server/ingest.py
+After=network.target
+
+[Service]
+Type=simple
+User=kunz-ai
+WorkingDirectory=/home/kunz-ai/ENGINEERING-PROJECTS/ACTIVE-PROJECTS/web/Kunz-Ideal-Government/server
+Environment=IG_INBOX_DIR=/home/kunz-ai/agent-box/ideal-government/inbox
+ExecStart=/home/kunz-ai/agents/venv/bin/uvicorn inbox_api:app --host 127.0.0.1 --port 8089
+Restart=on-failure
+RestartSec=5
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

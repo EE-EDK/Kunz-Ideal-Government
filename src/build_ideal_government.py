@@ -407,6 +407,20 @@ body {
 .status-critical { background:rgba(217,85,74,0.16); color:var(--crimson-hot); }
 .status-neutral  { background:rgba(199,184,156,0.08); color:var(--paper-soft); }
 
+/* Paste box — saves text to the hub inbox (see server/inbox_api.py) */
+.paste { margin-top:96px; padding-top:40px; border-top:1px solid var(--ink-divider); }
+.paste__cap { font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.3em; color:var(--gold); margin-bottom:18px; }
+.paste__title { font-family:var(--serif); font-variation-settings:"opsz" 96,"SOFT" 30; font-weight:500; font-size:34px; line-height:1.1; color:var(--paper); margin-bottom:12px; }
+.paste__lede { font-family:var(--serif); font-variation-settings:"opsz" 18,"SOFT" 0; font-style:italic; font-size:17px; line-height:1.6; color:var(--paper-soft); max-width:620px; margin-bottom:24px; }
+.paste__form { display:flex; flex-direction:column; gap:10px; max-width:760px; }
+.paste__label { font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:0.16em; color:var(--paper-faded); margin-top:8px; }
+.paste__text { width:100%; min-height:260px; resize:vertical; background:var(--ink-card); border:1px solid var(--ink-divider); color:var(--paper);
+  padding:14px 16px; border-radius:3px; font-family:var(--serif); font-size:16px; line-height:1.55; outline:none; }
+.paste__text:focus { border-color:var(--gold); background:var(--ink-elev); }
+.paste__row { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:6px; flex-wrap:wrap; }
+.paste__submit { flex:0 0 auto; padding:10px 18px; }
+.paste__status { font-family:var(--sans); font-size:14px; color:var(--paper-soft); min-height:1.6em; }
+
 /* Footer */
 .footer { margin-top:96px; padding-top:36px; border-top:1px solid var(--ink-divider); text-align:center; }
 .footer__mark { font-family:var(--serif); font-style:italic; font-size:22px; color:var(--gold); margin-bottom:10px; opacity:.7; }
@@ -531,6 +545,29 @@ BODY = """<body>
         {files}
       </section>
 
+      <section class="paste" id="paste" aria-labelledby="pasteTitle">
+        <div class="paste__cap">Inbox</div>
+        <h2 class="paste__title" id="pasteTitle">Paste text for the next update</h2>
+        <p class="paste__lede">
+          Paste a conversation or notes. It is saved on kunz-ai-hub and read
+          the next time the design is updated. Nothing here changes the design
+          directly.
+        </p>
+        <form class="paste__form" id="pasteForm">
+          <label class="paste__label" for="pasteSource">Where it came from (optional)</label>
+          <input class="search" id="pasteSource" name="source" maxlength="200" type="text"
+                 placeholder="e.g. Claude chat, 2026-10-04">
+          <label class="paste__label" for="pasteText">Text</label>
+          <textarea class="paste__text" id="pasteText" name="text" maxlength="200000"
+                    placeholder="Paste here"></textarea>
+          <div class="paste__row">
+            <span class="file__date" id="pasteCount" aria-live="off">0 characters</span>
+            <button type="submit" class="ctl paste__submit">Save to inbox</button>
+          </div>
+          <p class="paste__status" id="pasteStatus" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
       <footer class="footer">
         <div class="footer__mark">&#8258;</div>
         <div class="footer__text">&mdash; End of design web &mdash;</div>
@@ -633,6 +670,39 @@ JS = """
   /* Deep link */
   if (location.hash.length > 1 && document.getElementById(location.hash.slice(1))) {
     requestAnimationFrame(() => navigateTo(location.hash.slice(1)));
+  }
+
+  /* Paste box — POSTs to api/inbox (relative: resolves under the page's
+     private slug, where Caddy applies basicauth and forwards to the service). */
+  const pForm = $('#pasteForm'), pText = $('#pasteText'), pSrc = $('#pasteSource'),
+        pStatus = $('#pasteStatus'), pCount = $('#pasteCount');
+  if (pForm) {
+    pText.addEventListener('input', () => {
+      pCount.textContent = pText.value.length.toLocaleString() + ' characters';
+    });
+    pForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!pText.value.trim()) { pStatus.textContent = 'Nothing to save yet.'; return; }
+      pStatus.textContent = 'Saving…';
+      try {
+        const r = await fetch('api/inbox', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: pText.value, source: pSrc.value }),
+        });
+        if (r.status === 201) {
+          const d = await r.json();
+          pStatus.textContent = 'Saved as ' + d.id + '. It will be read on the next update.';
+          pText.value = ''; pSrc.value = ''; pCount.textContent = '0 characters';
+        } else if (r.status === 401) {
+          pStatus.textContent = 'Not signed in. Reload the page and sign in again. Your text is still here.';
+        } else {
+          pStatus.textContent = 'Not saved (HTTP ' + r.status + '). Your text is still here; copy it before reloading.';
+        }
+      } catch (err) {
+        pStatus.textContent = 'Could not reach the inbox. Your text is still here.';
+      }
+    });
   }
 
   /* Scroll spy */
