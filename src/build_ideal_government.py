@@ -69,6 +69,9 @@ def load_data(path: Path = DATA_FILE) -> dict:
             for sub in item.get("subitems", []):
                 if sub["status"] not in STATUSES:
                     raise ValueError(f"subitem under {item['id']}: unknown status {sub['status']!r}")
+            for note in item.get("notes", []):
+                if not note.get("at") or not note.get("quote"):
+                    raise ValueError(f"note under {item['id']}: needs 'at' and 'quote'")
     return data
 
 
@@ -107,9 +110,80 @@ def render_item(item: dict) -> str:
         f'<span class="item__chev" aria-hidden="true"><svg class="kh-icon"><use href="#kh-icon-expand"/></svg></span>'
         f'</summary>'
         f'<div class="item__body">{explain_html}'
-        f'<p class="item__desc">{esc(item["desc"])}</p>{sub_html}</div>'
+        f'<p class="item__desc">{esc(item["desc"])}</p>{sub_html}{render_notes(item.get("notes", []))}</div>'
         f'</details>'
     )
+
+
+def render_notes(notes: list[dict]) -> str:
+    """The owner's own words for this item, verbatim, each dated."""
+    if not notes:
+        return ""
+    quotes = "".join(
+        f'<blockquote class="note"><p>{esc(n["quote"])}</p>'
+        f'<cite>Owner, {esc(n["at"])} (founding conversation)</cite></blockquote>'
+        for n in notes
+    )
+    return f'<div class="item__notes"><p class="item__notes-head">In the owner&rsquo;s words</p>{quotes}</div>'
+
+
+def render_reference(data: dict) -> str:
+    """Reference sections from the v2 master: axioms, core architecture,
+    resolution log and priority queue. Each is optional in the data."""
+    parts = []
+    if data.get("axioms"):
+        rows = "".join(
+            f'<li class="ref__row"><span class="ref__num">{n:02d}</span>'
+            f'<div><p class="ref__name">{esc(a["name"])}</p>'
+            f'<p class="ref__text">{esc(a["text"])}</p></div></li>'
+            for n, a in enumerate(data["axioms"], start=1)
+        )
+        parts.append(
+            f'<section class="ref" id="axioms"><h2 class="ref__title">Axioms</h2>'
+            f'<ol class="ref__list">{rows}</ol></section>'
+        )
+    if data.get("core_architecture"):
+        blocks = "".join(
+            f'<details class="item"><summary class="item__row"><span class="item__head">'
+            f'<span class="item__label">{esc(c["name"])}</span></span>'
+            f'<span class="item__chev" aria-hidden="true"><svg class="kh-icon"><use href="#kh-icon-expand"/></svg></span>'
+            f'</summary><div class="item__body"><ul class="ref__points">'
+            + "".join(f'<li>{esc(p)}</li>' for p in c["points"])
+            + '</ul></div></details>'
+            for c in data["core_architecture"]
+        )
+        parts.append(
+            f'<section class="ref" id="architecture"><h2 class="ref__title">Core architecture</h2>'
+            f'{blocks}</section>'
+        )
+    if data.get("resolution_log"):
+        blocks = "".join(
+            f'<details class="item"><summary class="item__row"><span class="item__head">'
+            f'<span class="item__label">{esc(r["id"])}</span>'
+            f'<span class="item__date">{esc(r["date"])}</span></span>'
+            f'<span class="item__chev" aria-hidden="true"><svg class="kh-icon"><use href="#kh-icon-expand"/></svg></span>'
+            f'</summary><div class="item__body"><pre class="ref__log">{esc(r["body"])}</pre></div></details>'
+            for r in data["resolution_log"]
+        )
+        parts.append(
+            f'<section class="ref" id="resolutions"><h2 class="ref__title">Resolution log</h2>'
+            f'{blocks}</section>'
+        )
+    if data.get("priority_queue"):
+        rows = "".join(
+            f'<li class="ref__row"><span class="ref__num">{p["n"]:02d}</span>'
+            f'<div><p class="ref__name">{esc(p["item"])}</p>'
+            f'<p class="ref__text">{esc(p["layer"])} &middot; blocker: {esc(p["blocker"])}'
+            f'{" &middot; done" if p["done"] else ""}</p></div></li>'
+            for p in data["priority_queue"]
+        )
+        parts.append(
+            f'<section class="ref" id="priority"><h2 class="ref__title">Priority queue</h2>'
+            f'<ol class="ref__list">{rows}</ol></section>'
+        )
+    if not parts:
+        return ""
+    return f'<div class="reference">{"".join(parts)}</div>'
 
 
 def render_layer(layer: dict, n: int, cat_label: str) -> str:
@@ -171,6 +245,29 @@ def render_nav(data: dict) -> str:
             f'<span class="toc__catname">{esc(cat_label)}</span></div>'
             f'<ol class="toc__list">{links}</ol></div>'
         )
+    ref_links = [
+        (key, label)
+        for key, label in (
+            ("axioms", "Axioms"),
+            ("architecture", "Core architecture"),
+            ("resolutions", "Resolution log"),
+            ("priority", "Priority queue"),
+        )
+        if data.get(
+            {"axioms": "axioms", "architecture": "core_architecture",
+             "resolutions": "resolution_log", "priority": "priority_queue"}[key]
+        )
+    ]
+    if ref_links:
+        links = "".join(
+            f'<li><a href="#{key}"><span class="toc__num">&middot;</span><span>{label}</span></a></li>'
+            for key, label in ref_links
+        )
+        parts.append(
+            f'<div class="toc__group" data-cat="reference">'
+            f'<div class="toc__cat"><span class="toc__catname">Reference</span></div>'
+            f'<ol class="toc__list">{links}</ol></div>'
+        )
     return "".join(parts)
 
 
@@ -191,13 +288,14 @@ def build_html(data: dict, built_at: datetime | None = None) -> str:
     subtitle = data.get("subtitle", "Design Web")
     version = data.get("version", "v1")
 
-    return HEAD.format(title=esc(title)) + CSS + BODY.format(
+    return HEAD.format(title=esc(title)) + CSS + REF_CSS + BODY.format(
         title_main=esc(title),
         subtitle=esc(subtitle),
         version=esc(version),
         build_time=build_time,
         nav=render_nav(data),
         files=render_files(data),
+        reference=render_reference(data),
         n_layers=n_layers,
         n_items=total,
         n_resolved=resolved,
@@ -519,6 +617,36 @@ body {
 </head>
 """
 
+# Owner's notes and reference sections. Tokens come from the block above.
+REF_CSS = r"""<style>
+.item__notes { margin:18px 0 0 0; padding-top:14px; border-top:1px dashed var(--ink-divider); }
+.item__notes-head { font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--gold); margin:0 0 10px 0; }
+.note { margin:0 0 14px 0; padding:2px 0 2px 16px; border-left:2px solid var(--gold); }
+.note p { font-family:var(--serif); font-style:italic; font-size:15.5px; line-height:1.6; color:var(--paper-soft); margin:0; }
+.note cite { display:block; margin-top:6px; font-family:var(--mono); font-style:normal; font-size:10.5px;
+  letter-spacing:.06em; color:var(--paper-ghost); }
+.reference { margin-top:56px; display:grid; gap:40px; }
+.ref { scroll-margin-top:24px; }
+.ref__title { font-family:var(--serif); font-weight:400; font-size:28px; color:var(--paper); margin:0 0 16px 0;
+  padding-bottom:10px; border-bottom:1px solid var(--ink-divider); }
+.ref__list { list-style:none; margin:0; padding:0; display:grid; gap:14px; }
+.ref__row { display:grid; grid-template-columns:44px 1fr; gap:14px; align-items:start; }
+.ref__num { font-family:var(--mono); font-size:12px; color:var(--gold); padding-top:4px; }
+.ref__name { font-family:var(--serif); font-size:18px; color:var(--paper); margin:0 0 4px 0; }
+.ref__text { font-family:var(--sans); font-size:14.5px; line-height:1.6; color:var(--paper-faded); margin:0; }
+.ref__points { margin:0; padding-left:18px; font-family:var(--sans); font-size:14.5px; line-height:1.6; color:var(--paper-faded); }
+.ref__points li { margin:0 0 6px 0; }
+.ref__log { white-space:pre-wrap; font-family:var(--sans); font-size:14px; line-height:1.6; color:var(--paper-faded);
+  margin:0; }
+.item__date { font-family:var(--mono); font-size:11px; color:var(--paper-ghost); margin-left:12px; }
+@media (max-width: 600px) {
+  .ref__title { font-size:24px; }
+  .ref__row { grid-template-columns:32px 1fr; gap:10px; }
+  .note p { font-size:15px; }
+}
+</style>"""
+
 BODY = """<body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
     <symbol id="kh-icon-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="m6 9 6 6 6-6"/></symbol>
@@ -570,6 +698,8 @@ BODY = """<body>
       <section class="files" aria-label="Layers">
         {files}
       </section>
+
+      {reference}
 
       <section class="paste" id="paste" aria-labelledby="pasteTitle">
         <div class="paste__cap">Inbox</div>
