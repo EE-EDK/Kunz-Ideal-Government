@@ -13,7 +13,7 @@ On 2026-10-04, KunzPrime held a second, unrelated history of this repo, called v
 | `sources/GOVERNMENT_PROJECT_BRIEF.md` | Project brief v1.0 (2026-06-02) with the 2026-10-04 status note. |
 | `sources/design-diff.txt` | Item-level diff between v2 and the v1-based `layers.json`. |
 
-The founding conversation (2026-06-02, 84 KB) is not in this public repo. It lives on KunzPrime at `tools/desktop-rag/documents/claude-cloud-conversations/2026-06-02_Defining-the-ideal-government_ebd77a5a.md`. Every `[VERIFIED: 2026-06-02 transcript]` tag points there. The full v2 tree is kept on KunzPrime as the local tag `recovered/local-v2-2026-10-04`, plus a bundle under `recovery/`.
+The founding conversation (2026-06-02, 84 KB) is not in this public repo. On the hub it is at `~/agent-box/ideal-government/sources/2026-06-02_Defining-the-ideal-government_ebd77a5a.md` (mode 600, copied 2026-10-04, sha256 `8c6503c0…3e99`). On KunzPrime it is at `tools/desktop-rag/documents/claude-cloud-conversations/` under the same name. Every `[VERIFIED: 2026-06-02 transcript]` tag points there. The full v2 tree is kept on KunzPrime as the local tag `recovered/local-v2-2026-10-04`, plus a bundle under `recovery/`.
 
 ## Applying on kunz-ai-hub
 
