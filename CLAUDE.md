@@ -17,16 +17,16 @@ turns it into one HTML page in the persona-dossier style.
   CSS). Change the dossier's design in `web/persona-system` first, then mirror here.
 - The builder is stdlib only. The inbox service (`server/inbox_api.py`) uses the
   service venv's FastAPI/uvicorn; tests run with `~/agents/venv/bin/python -m pytest server/tests`.
-- The paste box posts to the inbox, so the page that has it must stay private.
-  A public variant must be built without the paste section and without any API route.
+- The page is PUBLIC and has the text inbox. The inbox API is open to anyone, so
+  its limits (honeypot, 5/hour per visitor, 100/day, 20 KB) are load-bearing. Do not loosen them.
 
 ## Inbox (paste box)
-Paste text on the private kunzhub page → `POST /priv/ideal-government/api/inbox` (basicauth,
-Caddy strips the prefix) → `server/inbox_api.py` on 127.0.0.1:8089 → `~/agent-box/ideal-government/inbox/`.
+Paste text on the public page → `POST /p/ideal-government/api/inbox` (Caddy strips the prefix) →
+`server/inbox_api.py` on 127.0.0.1:8089 → `~/agent-box/ideal-government/inbox/`.
 Read and process with `python3 server/ingest.py list|show <id>|done <id>`. Nothing is deleted;
 `done` moves an item to `processed/`. Unit: `deploy/ideal-government-inbox-api.service`.
 
 ## Hosting
-Published to kunzhub as a **private** page (basicauth). Source of truth for the
-kunzhub copy is `ideal_government.html` in this repo. Publish steps are in
+Published to kunzhub as a **public** page at `/p/ideal-government/`. Source of truth for
+the kunzhub copy is `ideal_government.html` in this repo (the only built page). Publish steps are in
 `Self-Host/sites/kunzhub` (`scripts/add-page.sh`).

@@ -101,3 +101,32 @@ def test_cli_show_prints_text(client, inbox):
     out = subprocess.run([sys.executable, str(SERVER / "ingest.py"), "show", item_id],
                          env=env, capture_output=True, text=True, check=True)
     assert out.stdout == "line one\nline two\n"
+
+
+def test_honeypot_looks_accepted_and_stores_nothing(client, inbox):
+    r = client.post("/api/inbox", json={"text": "spam", "website": "http://x"})
+    assert r.status_code == 201
+    assert not inbox.exists() or not any(inbox.glob("*.json"))
+
+
+def test_hourly_limit_per_client(client, inbox):
+    for _ in range(inbox_api.HOURLY_PER_CLIENT):
+        assert client.post("/api/inbox", json={"text": "x"}, headers={"x-forwarded-for": "198.51.100.7"}).status_code == 201
+    r = client.post("/api/inbox", json={"text": "x"}, headers={"x-forwarded-for": "198.51.100.7"})
+    assert r.status_code == 429
+    # A different visitor is not blocked by the first one's count.
+    other = client.post("/api/inbox", json={"text": "x"}, headers={"x-forwarded-for": "203.0.113.9"})
+    assert other.status_code == 201
+
+
+def test_daily_total_cap(client, inbox, monkeypatch):
+    monkeypatch.setattr(inbox_api, "DAILY_TOTAL", 2)
+    assert client.post("/api/inbox", json={"text": "a"}, headers={"x-forwarded-for": "1.1.1.1"}).status_code == 201
+    assert client.post("/api/inbox", json={"text": "b"}, headers={"x-forwarded-for": "2.2.2.2"}).status_code == 201
+    assert client.post("/api/inbox", json={"text": "c"}, headers={"x-forwarded-for": "3.3.3.3"}).status_code == 429
+
+
+def test_raw_ip_is_not_stored(client, inbox):
+    client.post("/api/inbox", json={"text": "x"}, headers={"x-forwarded-for": "198.51.100.77"})
+    stored = next(inbox.glob("*.json")).read_text(encoding="utf-8")
+    assert "198.51.100.77" not in stored

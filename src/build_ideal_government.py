@@ -27,7 +27,6 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT_DIR / "data" / "layers.json"
 OUTPUT_FILE = ROOT_DIR / "ideal_government.html"
-PUBLIC_OUTPUT_FILE = ROOT_DIR / "ideal_government_public.html"
 
 STATUSES = {
     "resolved": ("Resolved", "status-success"),
@@ -179,7 +178,7 @@ def render_files(data: dict) -> str:
     )
 
 
-def build_html(data: dict, built_at: datetime | None = None, public: bool = False) -> str:
+def build_html(data: dict, built_at: datetime | None = None) -> str:
     built_at = built_at or datetime.now()
     build_time = built_at.strftime("%Y.%m.%d %H:%M")
     total, resolved = count_items(data)
@@ -188,7 +187,7 @@ def build_html(data: dict, built_at: datetime | None = None, public: bool = Fals
     subtitle = data.get("subtitle", "Design Web")
     version = data.get("version", "v1")
 
-    body = BODY.format(
+    return HEAD.format(title=esc(title)) + CSS + BODY.format(
         title_main=esc(title),
         subtitle=esc(subtitle),
         version=esc(version),
@@ -198,22 +197,8 @@ def build_html(data: dict, built_at: datetime | None = None, public: bool = Fals
         n_layers=n_layers,
         n_items=total,
         n_resolved=resolved,
-    )
-    js = JS
-    if public:
-        # The public page must not carry the paste box or its script: those
-        # post to the private inbox, and a public page with a form would let
-        # anyone write to the hub's disk.
-        body = _cut(body, '      <section class="paste"', '      <footer class="footer">')
-        js = _cut(js, '  /* Paste box', '  /* Scroll spy */')
-    return HEAD.format(title=esc(title)) + CSS + body + js + TAIL
+    ) + JS + TAIL
 
-
-def _cut(text: str, start: str, end: str) -> str:
-    """Remove the block from `start` up to (not including) `end`. Fails loudly if either marker is missing."""
-    i = text.index(start)
-    j = text.index(end, i)
-    return text[:i] + text[j:]
 
 
 HEAD = """<!DOCTYPE html>
@@ -766,9 +751,6 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     args.out.write_text(build_html(data), encoding="utf-8")
     print(f"wrote {args.out} ({len(data['layers'])} layers, {total} items, {resolved} resolved)")
-    public_out = args.out.with_name(PUBLIC_OUTPUT_FILE.name)
-    public_out.write_text(build_html(data, public=True), encoding="utf-8")
-    print(f"wrote {public_out} (public: no paste box)")
     return 0
 
 
