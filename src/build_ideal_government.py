@@ -344,9 +344,16 @@ def build_html(data: dict, built_at: datetime | None = None) -> str:
     title = data.get("title", "Ideal Government")
     subtitle = data.get("subtitle", "Design Web")
     version = data.get("version", "v1")
+    # The masthead sets the name in two lines: first word roman, the rest italic gold.
+    head_word, _, head_rest = title.partition(" ")
+    masthead_main = esc(head_word)
+    masthead_em = esc(head_rest or head_word)
 
     return HEAD.format(title=esc(title)) + CSS + REF_CSS + BODY.format(
         title_main=esc(title),
+        masthead_main=masthead_main,
+        masthead_em=masthead_em,
+        swiss_cross=SWISS_CROSS,
         subtitle=esc(subtitle),
         version=esc(version),
         build_time=build_time,
@@ -490,6 +497,7 @@ body {
 .masthead__title { font-family:var(--serif); font-variation-settings:"opsz" 144,"SOFT" 30; font-weight:500;
   font-size:clamp(56px,8.5vw,116px); line-height:.92; letter-spacing:-0.025em; color:var(--paper); margin-bottom:36px;
   animation:letterIn .95s .40s both cubic-bezier(0.2,0.7,0.2,1); }
+.swiss-cross { width:20px; height:20px; flex:none; color:var(--gold); }
 .masthead__title em { font-style:italic; font-variation-settings:"opsz" 144,"SOFT" 100; color:var(--gold); font-weight:400; }
 .masthead__lede { font-family:var(--serif); font-variation-settings:"opsz" 18,"SOFT" 0; font-weight:350; font-style:italic;
   font-size:19px; line-height:1.55; color:var(--paper-soft); max-width:540px; margin-bottom:28px; animation:fadeUp .7s .65s both cubic-bezier(0.2,0.7,0.2,1); }
@@ -715,6 +723,14 @@ REF_CSS = r"""<style>
 }
 </style>"""
 
+# A Swiss cross in a gold frame: the one ornament on the masthead.
+SWISS_CROSS = (
+    '<svg class="swiss-cross" viewBox="0 0 24 24" aria-hidden="true">'
+    '<rect x="0.75" y="0.75" width="22.5" height="22.5" fill="none" stroke="currentColor" stroke-width="1.5"/>'
+    '<path d="M10 5h4v5h5v4h-5v5h-4v-5H5v-4h5z" fill="currentColor"/>'
+    '</svg>'
+)
+
 BODY = """<body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
     <symbol id="kh-icon-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="m6 9 6 6 6-6"/></symbol>
@@ -750,8 +766,8 @@ BODY = """<body>
 
     <main class="main">
       <header class="masthead">
-        <div class="masthead__cap">Design Web &middot; Working Draft</div>
-        <h1 class="masthead__title">Ideal<br><em>Government.</em></h1>
+        <div class="masthead__cap">{swiss_cross}Design Web &middot; Working Draft</div>
+        <h1 class="masthead__title">{masthead_main}<br><em>{masthead_em}.</em></h1>
         <p class="masthead__lede">
           A constitutional core and six design layers. Every open question is
           compartmented as a file, and every item carries a status.
