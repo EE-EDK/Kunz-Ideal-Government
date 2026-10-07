@@ -488,6 +488,17 @@
       ],
       "status": "notstarted",
       "label": "6C — Police Function"
+    },
+    "c31": {
+      "label": "C31 — Name of the state",
+      "status": "resolved",
+      "owner_notes": [
+        {
+          "at": "2026-10-07",
+          "quote": "keep both, add the dual naming as a resolved item",
+          "source": "naming session 2026-10-07 on kunz-ai-hub, not the founding conversation; the proposal to keep Kunzia as the formal name and Kunzland as the land was Claude's, the choice the owner's"
+        }
+      ]
     }
   },
   "resolution_log": {

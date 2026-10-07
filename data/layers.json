@@ -399,6 +399,13 @@
               "quote": "Would likely require some level of benefit for their volunteering to assist an internal problem...like a 10% weight toward promotion or position or something...or maybe a reduction in taxes required for future efforts)."
             }
           ]
+        },
+        {
+          "id": "c31",
+          "label": "Name of the state",
+          "status": "resolved",
+          "desc": "Kunzia is the formal name of the state; Kunzland is the name of the land and its people. The demonym is Kunzlander.",
+          "explanation": "Dual naming on the Swiss pattern: a Latin form for the charter, the seal and the coin (as Switzerland stamps Confoederatio Helvetica), and a vernacular form for the land in ordinary speech (as the Swiss say Schweiz). The full title of the state is the Kunzia Confederation; a citizen is a Kunzlander. Decided 2026-10-07; the explanation is the owner's decision, not a founding-conversation passage, so this item carries no founder's words."
         }
       ]
     },
@@ -1067,6 +1074,11 @@
       "id": "2026-10-04 master synthesis applied",
       "date": "2026-10-04",
       "body": "c26 now rejects universal service (synthesis: Dropped, 'Rejected in c26'). The delegated reconciliation in catalog/2026-10-04-v2-recovery (C1) kept universal service as a training term; that pick is superseded. The 2026-06-02 quote about mandatory service stays in data/ledger.json as provenance.\nConstitutional explanations completed from the brief and the synthesis (c1 to c30). Item descriptions added for 1C, 2A to 2C, 3A, 3C, 3D, 5B to 5E, 6A and 6E.\nPriority queue: 6E now sits before 6A, and a catch-all row for the remaining layer items was added.\nReference sections added: working principles, dropped and superseded, gaps in the record."
+    },
+    {
+      "id": "c31 — Name of the state",
+      "date": "2026-10-07",
+      "body": "Owner chose Kunzia for the state and Kunzland for the land and people, keeping both rather than picking one; demonym Kunzlander. Recorded as constitutional item c31 (31 of 31). Same session set the masthead: epigraph from C. G. Jung (source passage not yet verified), long line 'No crown placed, one oath embraced.', short motto 'Sworn, not ruled.' in the footer. The mottos are not yet design items."
     }
   ],
   "priority_queue": [
