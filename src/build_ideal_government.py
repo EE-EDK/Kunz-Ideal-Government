@@ -503,7 +503,7 @@ body {
 .masthead__lede blockquote { margin:0; font-family:var(--serif); font-variation-settings:"opsz" 18,"SOFT" 0; font-weight:350; font-style:italic;
   font-size:19px; line-height:1.55; color:var(--paper-soft); }
 .masthead__lede figcaption { font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.18em; color:var(--paper-faded); margin-top:10px; }
-.masthead__phrase { font-family:var(--serif); font-variation-settings:"opsz" 96,"SOFT" 30; font-weight:500; font-size:24px; line-height:1.3; color:var(--gold); margin:22px 0 0; }
+.masthead__phrase { font-family:var(--serif); font-variation-settings:"opsz" 96,"SOFT" 30; font-weight:500; font-size:34px; line-height:1.2; letter-spacing:-0.01em; color:var(--gold); margin:26px 0 0; }
 .masthead__meta { font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.18em; color:var(--paper-faded);
   display:flex; gap:14px; align-items:center; flex-wrap:wrap; animation:fadeUp .6s .85s both cubic-bezier(0.2,0.7,0.2,1); }
 .masthead__meta .dot { color:var(--paper-ghost); }
@@ -774,7 +774,7 @@ BODY = """<body>
         <figure class="masthead__lede">
           <blockquote>&ldquo;Although the opposites flee from one another, they nevertheless strive for balance, since a state of conflict is too inimical to life to be endured indefinitely.&rdquo;</blockquote>
           <figcaption>&mdash; C.&nbsp;G. Jung</figcaption>
-          <p class="masthead__phrase">A confederation of self-governing cells, bound by one constitution.</p>
+          <p class="masthead__phrase">Sworn, not ruled.</p>
         </figure>
         <div class="masthead__meta">
           <span>{n_layers} layers</span><span class="dot">&middot;</span>
