@@ -499,8 +499,11 @@ body {
   animation:letterIn .95s .40s both cubic-bezier(0.2,0.7,0.2,1); }
 .swiss-cross { width:20px; height:20px; flex:none; color:var(--gold); }
 .masthead__title em { font-style:italic; font-variation-settings:"opsz" 144,"SOFT" 100; color:var(--gold); font-weight:400; }
-.masthead__lede { font-family:var(--serif); font-variation-settings:"opsz" 18,"SOFT" 0; font-weight:350; font-style:italic;
-  font-size:19px; line-height:1.55; color:var(--paper-soft); max-width:540px; margin-bottom:28px; animation:fadeUp .7s .65s both cubic-bezier(0.2,0.7,0.2,1); }
+.masthead__lede { max-width:600px; margin:0 0 28px; animation:fadeUp .7s .65s both cubic-bezier(0.2,0.7,0.2,1); }
+.masthead__lede blockquote { margin:0; font-family:var(--serif); font-variation-settings:"opsz" 18,"SOFT" 0; font-weight:350; font-style:italic;
+  font-size:19px; line-height:1.55; color:var(--paper-soft); }
+.masthead__lede figcaption { font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.18em; color:var(--paper-faded); margin-top:10px; }
+.masthead__phrase { font-family:var(--serif); font-variation-settings:"opsz" 96,"SOFT" 30; font-weight:500; font-size:24px; line-height:1.3; color:var(--gold); margin:22px 0 0; }
 .masthead__meta { font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.18em; color:var(--paper-faded);
   display:flex; gap:14px; align-items:center; flex-wrap:wrap; animation:fadeUp .6s .85s both cubic-bezier(0.2,0.7,0.2,1); }
 .masthead__meta .dot { color:var(--paper-ghost); }
@@ -768,10 +771,11 @@ BODY = """<body>
       <header class="masthead">
         <div class="masthead__cap">{swiss_cross}Design Web &middot; Working Draft</div>
         <h1 class="masthead__title">{masthead_main}<br><em>{masthead_em}.</em></h1>
-        <p class="masthead__lede">
-          A constitutional core and six design layers. Every open question is
-          compartmented as a file, and every item carries a status.
-        </p>
+        <figure class="masthead__lede">
+          <blockquote>&ldquo;Although the opposites flee from one another, they nevertheless strive for balance, since a state of conflict is too inimical to life to be endured indefinitely.&rdquo;</blockquote>
+          <figcaption>&mdash; C.&nbsp;G. Jung</figcaption>
+          <p class="masthead__phrase">A confederation of self-governing cells, bound by one constitution.</p>
+        </figure>
         <div class="masthead__meta">
           <span>{n_layers} layers</span><span class="dot">&middot;</span>
           <span>{n_resolved} of {n_items} items resolved</span><span class="dot">&middot;</span>
