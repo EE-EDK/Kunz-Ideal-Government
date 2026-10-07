@@ -17,7 +17,7 @@ self-contained page styled after the Persona Dossier.
 
 ## Status
 
-v2.3 (2026-10-04): 54 items, 30 resolved. All 30 constitutional items are resolved;
+v2.3 (2026-10-07): 55 items, 31 resolved. All 31 constitutional items are resolved;
 1A is partly done. The v1 content of 2026-06-03 is carried over, then the v2 master
 decisions and the owner's master synthesis of 2026-10-04 are applied. The 3D graph is
 not carried over. Source records are in `catalog/`.
