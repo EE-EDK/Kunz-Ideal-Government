@@ -605,6 +605,7 @@ body {
 /* Footer */
 .footer { margin-top:96px; padding-top:36px; border-top:1px solid var(--ink-divider); text-align:center; }
 .footer__mark { font-family:var(--serif); font-style:italic; font-size:22px; color:var(--gold); margin-bottom:10px; opacity:.7; }
+.footer__motto { font-family:var(--serif); font-variation-settings:"opsz" 96,"SOFT" 30; font-weight:500; font-size:22px; color:var(--gold); margin-bottom:14px; }
 .footer__text { font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.24em; color:var(--paper-ghost); }
 
 /* Toggles + overlay */
@@ -774,7 +775,7 @@ BODY = """<body>
         <figure class="masthead__lede">
           <blockquote>&ldquo;Although the opposites flee from one another, they nevertheless strive for balance, since a state of conflict is too inimical to life to be endured indefinitely.&rdquo;</blockquote>
           <figcaption>&mdash; C.&nbsp;G. Jung</figcaption>
-          <p class="masthead__phrase">Sworn, not ruled.</p>
+          <p class="masthead__phrase">No crown placed, one oath embraced.</p>
         </figure>
         <div class="masthead__meta">
           <span>{n_layers} layers</span><span class="dot">&middot;</span>
@@ -814,6 +815,7 @@ BODY = """<body>
 
       <footer class="footer">
         <div class="footer__mark">&#8258;</div>
+        <div class="footer__motto">Sworn, not ruled.</div>
         <div class="footer__text">&mdash; End of design web &mdash;</div>
       </footer>
     </main>
